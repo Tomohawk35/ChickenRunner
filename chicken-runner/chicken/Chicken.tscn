@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dyfc3e0yrrdkp"]
 
 [ext_resource type="Script" uid="uid://cgh1v6jgerdlm" path="res://chicken/chicken.gd" id="1_pclo1"]
-[ext_resource type="Texture2D" uid="uid://dw6dw1cmswc68" path="res://assets/kenney_animal-pack-remastered/PNG/Round without details (outline)/chicken.png" id="2_pclo1"]
+[ext_resource type="Texture2D" uid="uid://biytj1uk41jcm" path="res://assets/kenney_animal-pack-remastered/PNG/Round/chicken.png" id="2_pclo1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rtt68"]
 radius = 14.0
