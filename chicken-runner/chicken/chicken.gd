@@ -1,11 +1,11 @@
 extends CharacterBody2D
 class_name Chicken
 
-var speed : float = 100.0
+var speed : float = 200.0
 
 func _physics_process(delta: float) -> void:
 	var dir : Vector2 = _get_direction()
-	velocity = dir.normalized() * speed * delta
+	velocity = dir.normalized() * speed
 	move_and_slide()
 
 func _get_direction() -> Vector2:
