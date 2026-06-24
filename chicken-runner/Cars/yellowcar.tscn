@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ccfgae2dvkr73"]
+
+[ext_resource type="PackedScene" uid="uid://c1w7ji2vf5rug" path="res://Cars/redcar.tscn" id="1_u3ys1"]
+
+[node name="yellowcar" unique_id=1423788077 instance=ExtResource("1_u3ys1")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=953042077]
+region_rect = Rect2(241.70667, 235.09421, 28.03952, 22.151215)

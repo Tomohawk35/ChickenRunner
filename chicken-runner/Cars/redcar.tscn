@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c1w7ji2vf5rug"]
+
+[ext_resource type="Script" uid="uid://cjf84wepm7iux" path="res://Cars/cars.gd" id="1_uijal"]
+[ext_resource type="Texture2D" uid="uid://bijvrkem5egfv" path="res://assets/kenney_rpg-urban-pack/Tilemap/tilemap_packed.png" id="2_rh13a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c78a1"]
+size = Vector2(20, 19)
+
+[node name="redcar" type="CharacterBody2D" unique_id=1423788077]
+script = ExtResource("1_uijal")
+speed = 150.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=953042077]
+texture = ExtResource("2_rh13a")
+region_enabled = true
+region_rect = Rect2(244.89536, 264.2903, 21.90915, 24.226501)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1623007393]
+shape = SubResource("RectangleShape2D_c78a1")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1906449151]
+rect = Rect2(-11, -10, 22, 22)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
