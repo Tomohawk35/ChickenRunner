@@ -1,45 +1,87 @@
 extends Node2D
 
-const car_types = [
+const CAR_TYPES = [
 	preload("res://Cars/redcar.tscn"),
 	preload("res://Cars/yellowcar.tscn"),
 	preload("res://Cars/greencar.tscn")
 ]
 
-@export var spawn_points: Array[Node2D] 
-@export_category("Spawn Time")
-@export var start_range: float = 1.0
-@export var end_range: float = 1.5
+@export var lanes: Array[Node2D]
+
+@export var speed_randomness: float = 25.0
+@export var proximity_check: float = 400.0
 
 func _ready() -> void:
-	spawn_car()
+	randomize()
 
-func spawn_car() -> void:
-	if spawn_points.is_empty():
-		printerr("Error: No spawn points assigned in the Inspector!")
+	if lanes.is_empty():
+		printerr("No lanes assigned!")
 		return
 
-	var random_point_index = randi() % spawn_points.size()
-	var random_point = spawn_points[random_point_index]
+	for i in range(lanes.size()):
+		start_lane(i)
 
-	var random_car_scene = car_types.pick_random()
-	var new_car = random_car_scene.instantiate()
 
-	if not new_car:
-		print("Failed to instantiate a car scene.")
+func start_lane(lane_index: int) -> void:
+	lane_loop(lane_index)
+
+
+func lane_loop(lane_index: int) -> void:
+	var lane = lanes[lane_index]
+
+	while true:
+		if GameManager.state == GameManager.GameState.PLAYING \
+				and can_spawn(lane):
+			spawn_car(lane)
+		await get_tree().create_timer(lane.spawn_delay).timeout
+		if GameManager.state == GameManager.GameState.GAME_OVER:
+			return
+
+
+func can_spawn(lane: Node2D) -> bool:
+	var spawn_pos = lane.global_position
+	for child in get_children():
+		if child is CharacterBody2D:
+			if abs(child.global_position.y - spawn_pos.y) < 10.0:
+				var dx = child.global_position.x - spawn_pos.x
+				var dist = abs(dx)
+				if dist < proximity_check:
+					if lane.move_right and dx > 0:
+						return false
+					if not lane.move_right and dx < 0:
+						return false
+	return true
+
+
+func spawn_car(lane: Node2D) -> void:
+	var car_scene = CAR_TYPES.pick_random()
+
+	if car_scene == null:
 		return
 
-	new_car.global_position = random_point.global_position
-	
-	if random_point_index % 2 == 0:
-		if "flip" in new_car:
-			new_car.flip = true
-	else:
-		if "flip" in new_car:
-			new_car.flip = false
-			
-	add_child(new_car)
-	
-	var timer = get_tree().create_timer(randf_range(start_range, end_range))
-	await timer.timeout
-	spawn_car()
+	var car = car_scene.instantiate()
+
+	if car == null:
+		return
+
+	add_child(car)
+
+	car.global_position = lane.global_position
+
+	# Direction
+	var dir = Vector2.RIGHT
+
+	if !lane.move_right:
+		dir = Vector2.LEFT
+
+	car.set_direction(dir)
+
+	# Speed
+	var final_speed = lane.lane_speed
+
+	final_speed += randf_range(
+		-speed_randomness,
+		speed_randomness
+	)
+
+	car.set_speed(final_speed)

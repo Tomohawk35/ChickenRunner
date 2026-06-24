@@ -11,6 +11,9 @@ shader_parameter/distortion_strength = 0.010000000475
 shader_parameter/glow_strength = 0.3
 shader_parameter/wave_scale = Vector2(6, 6)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c78a1"]
+size = Vector2(120.00003, 1545)
+
 [node name="Heatwave shader" type="Node2D" unique_id=1661995800]
 script = ExtResource("1_1nq7m")
 
@@ -28,3 +31,13 @@ grow_vertical = 2
 rotation = 1.5707964
 texture = ExtResource("2_n48vv")
 expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1915332126]
+position = Vector2(520.69727, 2.27604e-05)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=267369195]
+position = Vector2(66.00002, 773.19727)
+shape = SubResource("RectangleShape2D_c78a1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
