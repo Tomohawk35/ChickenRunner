@@ -5,6 +5,7 @@ signal Hit
 enum GameState { MAIN_MENU, PLAYING, GAME_OVER }
 
 const FADE_DURATION : float = 0.2
+const LAST_LEVEL : int = 1
 
 var current_level : int = 0
 
@@ -12,7 +13,8 @@ var _current_state: GameState
 var _game_scenes : Dictionary[String, String] = {
 	"main_menu": "uid://ccghfwhfqeydf",
 	"game_over": "uid://cilxyeywaty0j",
-	"level_1": "uid://bvj4u3smrfbcr"
+	"level_1": "uid://bvj4u3smrfbcr",
+	"victory": "uid://dqt2r7qcy7pcn"
 }
 
 @onready var _tree := get_tree()
@@ -62,5 +64,7 @@ func new_game() -> void:
 	change_scene("level_" + str(current_level))
 
 func next_level() -> void:
+	if current_level == LAST_LEVEL:
+		change_scene("victory")
 	current_level += 1
 	change_scene("level_" + str(current_level))

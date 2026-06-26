@@ -1,26 +1,25 @@
 extends CharacterBody2D
+class_name MovingObject
 
 @export var speed : float = 300.0
 
+var direction : Vector2 = Vector2.RIGHT
+var has_entered_screen : bool = false
+
 @onready var sprite: Sprite2D = $Sprite2D
 
-var direction : Vector2 = Vector2.RIGHT
-
-var has_entered_screen := false
-
 func _physics_process(_delta: float) -> void:
-
 	velocity = direction.normalized() * speed
-
+	
 	move_and_slide()
-
-	if sprite:
-		sprite.flip_h = (direction == Vector2.LEFT)
+	
+	#if sprite:
+		#sprite.flip_h = (direction == Vector2.LEFT)
 
 
 func set_direction(new_direction: Vector2):
 	direction = new_direction
-
+	
 	if sprite:
 		sprite.flip_h = (direction == Vector2.LEFT)
 

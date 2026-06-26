@@ -5,6 +5,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rtt68"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nmmnu"]
+radius = 13.0
+
 [node name="Chicken" type="CharacterBody2D" unique_id=909518055]
 script = ExtResource("1_pclo1")
 
@@ -15,3 +18,10 @@ texture = ExtResource("2_pclo1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=946184134]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_rtt68")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1176070470]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=372357217]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_nmmnu")
+debug_color = Color(0.78603417, 0.30318707, 0.7783108, 0.41960785)

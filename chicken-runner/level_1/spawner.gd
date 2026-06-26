@@ -1,4 +1,5 @@
 extends Node2D
+class_name Spawner
 
 const CAR_TYPES = [
 	preload("res://Cars/redcar.tscn"),
