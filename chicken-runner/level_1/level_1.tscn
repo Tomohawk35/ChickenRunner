@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://btfy4nhytiw0l" path="res://level_1/spawner.tscn" id="3_u1mx0"]
 [ext_resource type="PackedScene" uid="uid://c2xaogyl60bkr" path="res://Shaders/heatwave_shader.tscn" id="4_3ockh"]
 [ext_resource type="PackedScene" uid="uid://b3q2rxnjpunna" path="res://level_1/lane.tscn" id="4_u1mx0"]
+[ext_resource type="PackedScene" uid="uid://dfneucp8uygcq" path="res://level_1/completion_zone.tscn" id="6_u1mx0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_10lpg"]
 texture = ExtResource("1_eef11")
@@ -499,6 +500,9 @@ separation = Vector2i(1, 1)
 [sub_resource type="TileSet" id="TileSet_rtt68"]
 sources/0 = SubResource("TileSetAtlasSource_10lpg")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtt68"]
+size = Vector2(1335, 56)
+
 [node name="Level1" type="Node2D" unique_id=2030443767]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1763329312]
@@ -561,3 +565,10 @@ lane_speed = 600.0
 
 [node name="Heatwave shader" parent="." unique_id=1661995800 instance=ExtResource("4_3ockh")]
 position = Vector2(810, 621)
+
+[node name="CompletionZone" parent="." unique_id=457801201 instance=ExtResource("6_u1mx0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CompletionZone" unique_id=84402696]
+position = Vector2(629.5, -18)
+shape = SubResource("RectangleShape2D_rtt68")
+debug_color = Color(0.09949931, 0.63286144, 0.41357645, 0.41960785)
