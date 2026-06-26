@@ -11,7 +11,7 @@ func _ready() -> void:
 	exit_button.pressed.connect(_on_exit_button_pressed)
 
 func _on_start_game_button_pressed() -> void:
-	GameManager.change_scene("level_01")
+	GameManager.new_game()
 
 func _on_options_button_pressed() -> void:
 	pass

@@ -6,12 +6,13 @@ enum GameState { MAIN_MENU, PLAYING, GAME_OVER }
 
 const FADE_DURATION : float = 0.2
 
+var current_level : int = 0
+
 var _current_state: GameState
-#var _current_scene : Node
 var _game_scenes : Dictionary[String, String] = {
 	"main_menu": "uid://ccghfwhfqeydf",
 	"game_over": "uid://cilxyeywaty0j",
-	"level_01": "uid://bvj4u3smrfbcr"
+	"level_1": "uid://bvj4u3smrfbcr"
 }
 
 @onready var _tree := get_tree()
@@ -55,3 +56,11 @@ func change_scene(scene: String) -> void:
 	_current_scene = next_scene.instantiate()
 	_root.add_child(_current_scene)
 	await _fade_in().finished
+
+func new_game() -> void:
+	current_level = 1
+	change_scene("level_" + str(current_level))
+
+func next_level() -> void:
+	current_level += 1
+	change_scene("level_" + str(current_level))
