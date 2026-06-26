@@ -30,11 +30,11 @@ func lane_loop(lane_index: int) -> void:
 	var lane = lanes[lane_index]
 
 	while true:
-		if GameManager.state == GameManager.GameState.PLAYING \
+		if GameManager._current_state == GameManager.GameState.PLAYING \
 				and can_spawn(lane):
 			spawn_car(lane)
 		await get_tree().create_timer(lane.spawn_delay).timeout
-		if GameManager.state == GameManager.GameState.GAME_OVER:
+		if GameManager._current_state == GameManager.GameState.GAME_OVER:
 			return
 
 

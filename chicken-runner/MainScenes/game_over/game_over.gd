@@ -11,6 +11,6 @@ func _on_game_over() -> void:
 	get_tree().paused = true
 
 func _on_restart_button_down() -> void:
-	GameManager.state = GameManager.GameState.PLAYING
+	GameManager._current_state = GameManager.GameState.PLAYING
 	get_tree().paused = false
 	get_tree().reload_current_scene()
