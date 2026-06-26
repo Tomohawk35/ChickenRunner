@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c2xaogyl60bkr" path="res://Shaders/heatwave_shader.tscn" id="4_3ockh"]
 [ext_resource type="PackedScene" uid="uid://b3q2rxnjpunna" path="res://level_1/lane.tscn" id="4_u1mx0"]
 [ext_resource type="PackedScene" uid="uid://dfneucp8uygcq" path="res://level_1/completion_zone.tscn" id="6_u1mx0"]
+[ext_resource type="PackedScene" uid="uid://cfuo2jrippyop" path="res://MainScenes/player_hud/player_hud.tscn" id="7_kwhby"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_10lpg"]
 texture = ExtResource("1_eef11")
@@ -572,3 +573,5 @@ position = Vector2(810, 621)
 position = Vector2(629.5, -18)
 shape = SubResource("RectangleShape2D_rtt68")
 debug_color = Color(0.09949931, 0.63286144, 0.41357645, 0.41960785)
+
+[node name="PlayerHud" parent="." unique_id=1992921905 instance=ExtResource("7_kwhby")]

@@ -1,6 +1,7 @@
 extends Node
 
-signal Hit
+#signal Hit
+signal heat_changed(value: float)
 
 enum GameState { MAIN_MENU, PLAYING, GAME_OVER }
 
@@ -8,8 +9,9 @@ const FADE_DURATION : float = 0.2
 const LAST_LEVEL : int = 1
 
 var current_level : int = 0
+var heat_level : float = 0.0
 
-var _current_state: GameState
+#var _current_state: GameState
 var _game_scenes : Dictionary[String, String] = {
 	"main_menu": "uid://ccghfwhfqeydf",
 	"game_over": "uid://cilxyeywaty0j",
@@ -25,7 +27,8 @@ var _game_scenes : Dictionary[String, String] = {
 func _ready() -> void:
 	#if OS.is_debug_build():
 		#change_scene("level_01")
-	Hit.connect(_on_hit)
+	#Hit.connect(_on_hit)
+	pass
 
 func _fade_out() -> Tween:
 	var tween : Tween = create_tween()
@@ -39,8 +42,8 @@ func _fade_in() -> Tween:
 	tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	return tween
 
-func _on_hit() -> void:
-	_current_state = GameState.GAME_OVER
+#func _on_hit() -> void:
+	#_current_state = GameState.GAME_OVER
 
 func _load_scene_resource(path: Variant) -> Resource:
 	if path is PackedScene:
@@ -59,10 +62,21 @@ func change_scene(scene: String) -> void:
 
 func new_game() -> void:
 	current_level = 1
+	heat_level = 0.0
 	change_scene("level_" + str(current_level))
 
 func next_level() -> void:
 	if current_level == LAST_LEVEL:
 		change_scene("victory")
 	current_level += 1
+	heat_level = 0.0
 	change_scene("level_" + str(current_level))
+
+func game_over() -> void:
+	change_scene("game_over")
+
+func increase_heat(value: float) -> void:
+	heat_level += value
+	heat_changed.emit(heat_level)
+	if heat_level >= 100:
+		game_over()
