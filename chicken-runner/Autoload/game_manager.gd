@@ -17,16 +17,14 @@ var _game_scenes : Dictionary[String, String] = {
 	"victory": "uid://dqt2r7qcy7pcn"
 }
 
-@onready var _tree := get_tree()
-@onready var _root := _tree.get_root()
-@onready var _current_scene := _tree.current_scene
-
+@onready var _tree : SceneTree = get_tree()
+@onready var _root : Node = _tree.get_root()
+@onready var _current_scene : Node = _tree.current_scene
 @onready var color_rect: ColorRect = $CanvasLayer/ColorRect
 
 func _ready() -> void:
 	#if OS.is_debug_build():
 		#change_scene("level_01")
-	
 	Hit.connect(_on_hit)
 
 func _fade_out() -> Tween:

@@ -9,6 +9,7 @@
 radius = 13.0
 
 [node name="Chicken" type="CharacterBody2D" unique_id=909518055]
+collision_layer = 2
 script = ExtResource("1_pclo1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=362522952]
@@ -20,6 +21,8 @@ position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_rtt68")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1176070470]
+collision_layer = 0
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=372357217]
 position = Vector2(0, 1)

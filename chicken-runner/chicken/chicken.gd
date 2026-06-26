@@ -13,5 +13,12 @@ func _physics_process(_delta: float) -> void:
 	velocity = dir.normalized() * speed
 	move_and_slide()
 
+func _on_body_entered(body: Node2D) -> void:
+	if body is MovingObject:
+		print("Hit by car")
+		GameManager.change_scene("game_over")
+	else:
+		print("Some other body entered...")
+
 func _get_direction() -> Vector2:
 	return Input.get_vector("left", "right", "up", "down")
