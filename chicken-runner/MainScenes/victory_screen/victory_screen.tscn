@@ -4,11 +4,11 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_tdgg3"]
 font_size = 100
-font_color = Color(1, 0.50980395, 0, 1)
+font_color = Color(0.70509714, 0.68692124, 0.09083664, 1)
 outline_size = 5
-outline_color = Color(0.86960465, 0.3289683, 0.77553135, 1)
+outline_color = Color(0.12120066, 0.038661536, 0.0016563355, 1)
 shadow_size = 13
-shadow_color = Color(1, 0, 0, 0.7764706)
+shadow_color = Color(0.15064436, 0.052732714, 0.076602586, 0.7764706)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdsm2"]
 bg_color = Color(0, 0.7254902, 0.24313726, 0.827451)
