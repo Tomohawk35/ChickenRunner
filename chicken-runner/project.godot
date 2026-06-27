@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="ChickenRunner"
-run/main_scene="uid://bvj4u3smrfbcr"
+run/main_scene="uid://ccghfwhfqeydf"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*uid://cjv6rbo04veej"
+GameManager="*uid://ca5oy0v1raa6w"
 
 [display]
 

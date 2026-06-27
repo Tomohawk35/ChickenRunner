@@ -1,0 +1,82 @@
+extends Node
+
+#signal Hit
+signal heat_changed(value: float)
+
+enum GameState { MAIN_MENU, PLAYING, GAME_OVER }
+
+const FADE_DURATION : float = 0.2
+const LAST_LEVEL : int = 1
+
+var current_level : int = 0
+var heat_level : float = 0.0
+
+#var _current_state: GameState
+var _game_scenes : Dictionary[String, String] = {
+	"main_menu": "uid://ccghfwhfqeydf",
+	"game_over": "uid://cilxyeywaty0j",
+	"level_1": "uid://bvj4u3smrfbcr",
+	"victory": "uid://dqt2r7qcy7pcn"
+}
+
+@onready var _tree : SceneTree = get_tree()
+@onready var _root : Node = _tree.get_root()
+@onready var _current_scene : Node = _tree.current_scene
+@onready var color_rect: ColorRect = $CanvasLayer/ColorRect
+
+func _ready() -> void:
+	#if OS.is_debug_build():
+		#change_scene("level_01")
+	#Hit.connect(_on_hit)
+	pass
+
+func _fade_out() -> Tween:
+	var tween : Tween = create_tween()
+	tween.tween_property(color_rect, "color:a", 255, FADE_DURATION)
+	tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	return tween
+
+func _fade_in() -> Tween:
+	var tween : Tween = create_tween()
+	tween.tween_property(color_rect, "color:a", 0, FADE_DURATION)
+	tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	return tween
+
+#func _on_hit() -> void:
+	#_current_state = GameState.GAME_OVER
+
+func _load_scene_resource(path: Variant) -> Resource:
+	if path is PackedScene:
+		return path
+	return ResourceLoader.load(path, "PackedScene")
+
+func change_scene(scene: String) -> void:
+	if !_game_scenes.has(scene):
+		return
+	await _fade_out().finished
+	_current_scene.queue_free()
+	var next_scene : PackedScene = _load_scene_resource(_game_scenes[scene])
+	_current_scene = next_scene.instantiate()
+	_root.add_child(_current_scene)
+	await _fade_in().finished
+
+func new_game() -> void:
+	current_level = 1
+	heat_level = 0.0
+	change_scene("level_" + str(current_level))
+
+func next_level() -> void:
+	if current_level == LAST_LEVEL:
+		change_scene("victory")
+	current_level += 1
+	heat_level = 0.0
+	change_scene("level_" + str(current_level))
+
+func game_over() -> void:
+	change_scene("game_over")
+
+func increase_heat(value: float) -> void:
+	heat_level += value
+	heat_changed.emit(heat_level)
+	if heat_level >= 100:
+		game_over()

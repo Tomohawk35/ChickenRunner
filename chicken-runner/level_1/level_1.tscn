@@ -1,11 +1,12 @@
 [gd_scene format=4 uid="uid://bvj4u3smrfbcr"]
 
 [ext_resource type="Texture2D" uid="uid://cy4e6p2tab38e" path="res://assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="1_eef11"]
-[ext_resource type="PackedScene" uid="uid://dyfc3e0yrrdkp" path="res://chicken/Chicken.tscn" id="2_kw4bk"]
+[ext_resource type="PackedScene" uid="uid://dyfc3e0yrrdkp" path="res://chicken/chicken.tscn" id="2_kw4bk"]
+[ext_resource type="PackedScene" uid="uid://btfy4nhytiw0l" path="res://level_1/spawner.tscn" id="3_u1mx0"]
 [ext_resource type="PackedScene" uid="uid://c2xaogyl60bkr" path="res://Shaders/heatwave_shader.tscn" id="4_3ockh"]
-[ext_resource type="Script" uid="uid://c84tbj583l2ci" path="res://level_1/spawner.gd" id="4_10lpg"]
 [ext_resource type="PackedScene" uid="uid://b3q2rxnjpunna" path="res://level_1/lane.tscn" id="4_u1mx0"]
-[ext_resource type="PackedScene" uid="uid://cilxyeywaty0j" path="res://MainScenes/game_over.tscn" id="5_3ockh"]
+[ext_resource type="PackedScene" uid="uid://dfneucp8uygcq" path="res://level_1/completion_zone.tscn" id="6_u1mx0"]
+[ext_resource type="PackedScene" uid="uid://cfuo2jrippyop" path="res://MainScenes/player_hud/player_hud.tscn" id="7_kwhby"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_10lpg"]
 texture = ExtResource("1_eef11")
@@ -500,6 +501,9 @@ separation = Vector2i(1, 1)
 [sub_resource type="TileSet" id="TileSet_rtt68"]
 sources/0 = SubResource("TileSetAtlasSource_10lpg")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtt68"]
+size = Vector2(1335, 56)
+
 [node name="Level1" type="Node2D" unique_id=2030443767]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1763329312]
@@ -513,64 +517,61 @@ position = Vector2(504, 462)
 [node name="Camera2D" type="Camera2D" parent="Chicken" unique_id=157556832]
 position = Vector2(134, -101)
 
-[node name="Spawner" type="Node2D" parent="." unique_id=890115592 node_paths=PackedStringArray("lanes")]
-position = Vector2(-1, -123)
-script = ExtResource("4_10lpg")
-lanes = [NodePath("Lane"), NodePath("Lane2"), NodePath("Lane3"), NodePath("Lane4"), NodePath("Lane5"), NodePath("Lane6"), NodePath("Lane7"), NodePath("Lane8"), NodePath("Lane9"), NodePath("Lane10")]
-proximity_check = 200.0
+[node name="Spawner" parent="." unique_id=496078413 instance=ExtResource("3_u1mx0")]
 
 [node name="Lane" parent="Spawner" unique_id=418558146 instance=ExtResource("4_u1mx0")]
-position = Vector2(1280, 515)
+position = Vector2(1279, 392)
+move_right = false
 lane_speed = 150.0
 
 [node name="Lane2" parent="Spawner" unique_id=691353592 instance=ExtResource("4_u1mx0")]
-position = Vector2(-1, 478)
-move_right = true
+position = Vector2(-2, 355)
 
 [node name="Lane3" parent="Spawner" unique_id=1891483829 instance=ExtResource("4_u1mx0")]
-position = Vector2(1278, 454)
+position = Vector2(1277, 331)
+move_right = false
 
 [node name="Lane4" parent="Spawner" unique_id=1689597721 instance=ExtResource("4_u1mx0")]
-position = Vector2(3, 417)
-move_right = true
+position = Vector2(2, 294)
 spawn_delay = 4.0
 lane_speed = 250.0
 
 [node name="Lane5" parent="Spawner" unique_id=1344761444 instance=ExtResource("4_u1mx0")]
-position = Vector2(1277, 385)
+position = Vector2(1276, 262)
+move_right = false
 spawn_delay = 4.5
 lane_speed = 300.0
 
 [node name="Lane6" parent="Spawner" unique_id=448286394 instance=ExtResource("4_u1mx0")]
-position = Vector2(1, 350)
-move_right = true
+position = Vector2(0, 227)
 lane_speed = 450.0
 
 [node name="Lane7" parent="Spawner" unique_id=439481705 instance=ExtResource("4_u1mx0")]
-position = Vector2(1281, 304)
+position = Vector2(1280, 181)
+move_right = false
 lane_speed = 500.0
 
 [node name="Lane8" parent="Spawner" unique_id=678940327 instance=ExtResource("4_u1mx0")]
-position = Vector2(3, 251)
-move_right = true
+position = Vector2(2, 128)
 lane_speed = 500.0
 
 [node name="Lane9" parent="Spawner" unique_id=881429246 instance=ExtResource("4_u1mx0")]
-position = Vector2(1279, 197)
+position = Vector2(1278, 74)
+move_right = false
 lane_speed = 600.0
 
 [node name="Lane10" parent="Spawner" unique_id=469996756 instance=ExtResource("4_u1mx0")]
-position = Vector2(2, 161)
-move_right = true
+position = Vector2(1, 38)
 lane_speed = 600.0
 
 [node name="Heatwave shader" parent="." unique_id=1661995800 instance=ExtResource("4_3ockh")]
 position = Vector2(810, 621)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=717706988]
+[node name="CompletionZone" parent="." unique_id=457801201 instance=ExtResource("6_u1mx0")]
 
-[node name="Game Over" parent="CanvasLayer" unique_id=1392295141 instance=ExtResource("5_3ockh")]
-offset_left = -1.0
-offset_top = -123.0
-offset_right = -1.0
-offset_bottom = -123.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CompletionZone" unique_id=84402696]
+position = Vector2(629.5, -18)
+shape = SubResource("RectangleShape2D_rtt68")
+debug_color = Color(0.09949931, 0.63286144, 0.41357645, 0.41960785)
+
+[node name="PlayerHud" parent="." unique_id=1992921905 instance=ExtResource("7_kwhby")]

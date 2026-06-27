@@ -10,12 +10,12 @@ var shader_paused := false
 
 
 func _physics_process(delta: float) -> void:
-	if GameManager.state == GameManager.GameState.GAME_OVER:
-		if not shader_paused:
-			texture_rect.material.set_shader_parameter(&"speed", 0.0)
-			shader_paused = true
-		return
-
+	#if GameManager._current_state == GameManager.GameState.GAME_OVER:
+	if not shader_paused:
+		texture_rect.material.set_shader_parameter(&"speed", 0.0)
+		shader_paused = true
+	#return
+	
 	# Increase speed every 2 seconds
 	if !max_speed_reached:
 		elapsed_time += delta
@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 			
 			elapsed_time = 0.0
 
-	position.y -= speed * delta
+	#position.y -= speed * delta
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

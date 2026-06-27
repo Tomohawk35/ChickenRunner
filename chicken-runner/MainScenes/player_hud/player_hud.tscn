@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cfuo2jrippyop"]
+
+[ext_resource type="Script" uid="uid://c5ndpe7hmiifm" path="res://MainScenes/player_hud/player_hud.gd" id="1_4mxvl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtt68"]
+bg_color = Color(0.8663629, 0.48540246, 0.27041382, 1)
+
+[node name="PlayerHud" type="CanvasLayer" unique_id=1992921905]
+script = ExtResource("1_4mxvl")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2043524735]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 4.0
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TemperatureMeter" type="ProgressBar" parent="MarginContainer" unique_id=382612648]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 256)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/fill = SubResource("StyleBoxFlat_rtt68")
+value = 75.0
+fill_mode = 3
+show_percentage = false
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=40095357]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=257577408]
+layout_mode = 2
+
+[node name="LevelLabel" type="Label" parent="PanelContainer/MarginContainer" unique_id=1038726977]
+unique_name_in_owner = true
+layout_mode = 2

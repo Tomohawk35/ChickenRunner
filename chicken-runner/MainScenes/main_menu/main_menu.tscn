@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://ccghfwhfqeydf"]
+
+[ext_resource type="Script" uid="uid://b8jppogi8mavb" path="res://MainScenes/main_menu/main_menu.gd" id="1_70phs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h46x3"]
+font_size = 100
+font_color = Color(1, 0.50980395, 0, 1)
+outline_size = 5
+outline_color = Color(0.86960465, 0.3289683, 0.77553135, 1)
+shadow_size = 13
+shadow_color = Color(1, 0, 0, 0.7764706)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70phs"]
+bg_color = Color(0, 0.7254902, 0.24313726, 0.827451)
+border_width_left = 20
+border_width_top = 15
+border_width_right = 20
+border_width_bottom = 15
+border_color = Color(0.8, 0.8, 0, 0.5764706)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egyqj"]
+bg_color = Color(0, 0.6, 1, 1)
+border_width_left = 20
+border_width_top = 15
+border_width_right = 20
+border_width_bottom = 15
+border_color = Color(0.8, 0.2509804, 0, 0.5764706)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 1
+
+[node name="MainMenu" type="Control" unique_id=1235246227]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_70phs")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=425148318]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=443800750]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1718537717]
+layout_mode = 2
+text = "Chicken Runner"
+label_settings = SubResource("LabelSettings_h46x3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer" unique_id=816947068]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="StartGameButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=1520385454]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_70phs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_egyqj")
+text = "Start Game"
+
+[node name="OptionsButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=374200735]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_70phs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_egyqj")
+text = "Options"
+
+[node name="ExitButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=1938226035]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_70phs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_egyqj")
+text = "Exit"
