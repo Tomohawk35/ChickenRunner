@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://3ry0ewvq5rax"]
+
+[ext_resource type="Shader" uid="uid://dx83a6j1hdm18" path="res://Shaders/heatwave_shader.gdshader" id="1_g22nv"]
+[ext_resource type="Script" uid="uid://byqq1exhru7ss" path="res://MainScenes/player_hud/heat_distortion/heat_distortion.gd" id="2_5tffu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f2moy"]
+shader = ExtResource("1_g22nv")
+shader_parameter/speed = 1.0
+shader_parameter/distortion_strength = 0.02
+shader_parameter/glow_strength = 0.5
+shader_parameter/wave_scale = Vector2(6, 6)
+
+[sub_resource type="Gradient" id="Gradient_qc6y7"]
+offsets = PackedFloat32Array(0.560241, 1)
+colors = PackedColorArray(0.9999992, 0.6317086, 0.60316896, 0.58431375, 0.99998933, 0.18739048, 0.19881114, 0.59607846)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nmmnu"]
+gradient = SubResource("Gradient_qc6y7")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8565217, 0.07826087)
+
+[node name="HeatDistortion" type="TextureRect" unique_id=1080147779]
+material = SubResource("ShaderMaterial_f2moy")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_nmmnu")
+script = ExtResource("2_5tffu")

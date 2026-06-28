@@ -6,7 +6,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c78a1"]
 shader = ExtResource("1_dhiy2")
-shader_parameter/speed = 1.0
+shader_parameter/speed = 0.10000000475
 shader_parameter/distortion_strength = 0.010000000475
 shader_parameter/glow_strength = 0.3
 shader_parameter/wave_scale = Vector2(6, 6)
