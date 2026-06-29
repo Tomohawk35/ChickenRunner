@@ -9,8 +9,7 @@ var has_entered_screen : bool = false
 @onready var sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:
-	# TODO: Connect signals here, not through editor
-	pass
+	$Area2D.body_entered.connect(_on_area_2d_body_entered)
 
 func _process(_delta: float) -> void:
 	if global_position.x > 4000 or global_position.x < -200:
@@ -21,9 +20,6 @@ func _physics_process(_delta: float) -> void:
 	velocity = direction.normalized() * speed
 	
 	move_and_slide()
-	
-	#if sprite:
-		#sprite.flip_h = (direction == Vector2.LEFT)
 
 
 func set_direction(new_direction: Vector2):

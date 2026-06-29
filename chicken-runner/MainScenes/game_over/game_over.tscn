@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dhqwmro8kbi5n" path="res://MainScenes/game_over/game_over.gd" id="1_d1meb"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_c78a1"]
+[sub_resource type="LabelSettings" id="LabelSettings_m37it"]
 font_size = 100
 font_color = Color(1, 0.50980395, 0, 1)
 outline_size = 5
@@ -10,7 +10,7 @@ outline_color = Color(0.86960465, 0.3289683, 0.77553135, 1)
 shadow_size = 13
 shadow_color = Color(1, 0, 0, 0.7764706)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm3kx"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fnr46"]
 bg_color = Color(0, 0.7254902, 0.24313726, 0.827451)
 border_width_left = 20
 border_width_top = 15
@@ -23,7 +23,7 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 corner_detail = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1meb"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjrx5"]
 bg_color = Color(0, 0.6, 1, 1)
 border_width_left = 20
 border_width_top = 15
@@ -46,7 +46,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d1meb")
 
-[node name="Panel" type="Panel" parent="." unique_id=1060658886]
+[node name="Panel" type="PanelContainer" parent="." unique_id=1746116327]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,43 +54,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Panel" unique_id=1342531070]
-layout_mode = 0
-offset_left = 353.0
-offset_top = 439.0
-offset_right = 927.0
-offset_bottom = 439.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.6039216)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=154800762]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -287.0
-offset_top = -165.0
-offset_right = 287.0
-offset_bottom = 165.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1019511224]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 50
+alignment = 1
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=810981658]
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=3348890]
 layout_mode = 2
 text = "GAME OVER"
-label_settings = SubResource("LabelSettings_c78a1")
+label_settings = SubResource("LabelSettings_m37it")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Restart" type="Button" parent="Panel/VBoxContainer" unique_id=1945357840]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer" unique_id=480118012]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Restart" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=928531027]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_wm3kx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_d1meb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fnr46")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hjrx5")
 text = "Restart"
 
-[connection signal="button_down" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_button_down"]
+[node name="BacktoMenu" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=1436307635]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_fnr46")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hjrx5")
+text = "Main Menu"

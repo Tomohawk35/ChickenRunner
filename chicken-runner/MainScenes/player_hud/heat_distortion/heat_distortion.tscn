@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://3ry0ewvq5rax"]
 
-[ext_resource type="Shader" uid="uid://dx83a6j1hdm18" path="res://Shaders/heatwave_shader.gdshader" id="1_g22nv"]
+[ext_resource type="Shader" uid="uid://dx83a6j1hdm18" path="res://MainScenes/player_hud/heat_distortion/heatwave_shader.gdshader" id="1_g22nv"]
 [ext_resource type="Script" uid="uid://byqq1exhru7ss" path="res://MainScenes/player_hud/heat_distortion/heat_distortion.gd" id="2_5tffu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f2moy"]

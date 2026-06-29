@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Chicken
 
-var speed : float = 200.0
+var speed : float = 1200.0
 
 @onready var area_2d: Area2D = $Area2D
 

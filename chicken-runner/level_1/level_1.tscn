@@ -1,9 +1,8 @@
 [gd_scene format=4 uid="uid://bvj4u3smrfbcr"]
 
 [ext_resource type="Texture2D" uid="uid://cy4e6p2tab38e" path="res://assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="1_eef11"]
-[ext_resource type="PackedScene" uid="uid://dyfc3e0yrrdkp" path="res://chicken/chicken.tscn" id="2_kw4bk"]
+[ext_resource type="PackedScene" uid="uid://dyfc3e0yrrdkp" path="res://chicken/Chicken.tscn" id="2_kw4bk"]
 [ext_resource type="PackedScene" uid="uid://btfy4nhytiw0l" path="res://level_1/spawner.tscn" id="3_u1mx0"]
-[ext_resource type="PackedScene" uid="uid://c2xaogyl60bkr" path="res://Shaders/heatwave_shader.tscn" id="4_3ockh"]
 [ext_resource type="PackedScene" uid="uid://b3q2rxnjpunna" path="res://level_1/lane.tscn" id="4_u1mx0"]
 [ext_resource type="PackedScene" uid="uid://dfneucp8uygcq" path="res://level_1/completion_zone.tscn" id="6_u1mx0"]
 [ext_resource type="PackedScene" uid="uid://cfuo2jrippyop" path="res://MainScenes/player_hud/player_hud.tscn" id="7_kwhby"]
@@ -563,9 +562,6 @@ lane_speed = 600.0
 [node name="Lane10" parent="Spawner" unique_id=469996756 instance=ExtResource("4_u1mx0")]
 position = Vector2(1, 38)
 lane_speed = 600.0
-
-[node name="Heatwave shader" parent="." unique_id=1661995800 instance=ExtResource("4_3ockh")]
-position = Vector2(810, 621)
 
 [node name="CompletionZone" parent="." unique_id=457801201 instance=ExtResource("6_u1mx0")]
 
