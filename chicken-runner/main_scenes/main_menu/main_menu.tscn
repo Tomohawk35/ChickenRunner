@@ -95,7 +95,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_70phs")
 theme_override_styles/hover = SubResource("StyleBoxFlat_egyqj")
-text = "Options"
+text = "Credits"
 
 [node name="ExitButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=1938226035]
 unique_name_in_owner = true
@@ -104,3 +104,105 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_70phs")
 theme_override_styles/hover = SubResource("StyleBoxFlat_egyqj")
 text = "Exit"
+
+[node name="CreditsPanel" type="PanelContainer" parent="." unique_id=455196220]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.5
+offset_top = -42.5
+offset_right = 198.5
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CreditsPanel" unique_id=1867878199]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsPanel/MarginContainer" unique_id=1519289530]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer" unique_id=1650732432]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CreditsPanel/MarginContainer/VBoxContainer" unique_id=1011593721]
+custom_maximum_size = Vector2(-1, 512)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=501044088]
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1777895057]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Gamers Home Summer Game Jam 2026 Submission"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=904690812]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2063876521]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Team Lead: ChickenVicken"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=831178719]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Programmers: Tomohawk, AjithKuppam"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=849816256]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Artists: Peri"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=458734261]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Sound: MiniComp"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1581234763]
+visible = false
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer2" unique_id=153878383]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Gamers Home Summer Game Jam 2026 Submission"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer2" unique_id=1789305758]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Team Lead: ChickenVicken"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CloseButton" type="Button" parent="CreditsPanel/MarginContainer/VBoxContainer" unique_id=907908448]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Close"
