@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cfuo2jrippyop"]
 
-[ext_resource type="Script" uid="uid://c5ndpe7hmiifm" path="res://MainScenes/player_hud/player_hud.gd" id="1_4mxvl"]
-[ext_resource type="PackedScene" uid="uid://3ry0ewvq5rax" path="res://MainScenes/player_hud/heat_distortion/heat_distortion.tscn" id="2_rdpnl"]
+[ext_resource type="Script" uid="uid://c5ndpe7hmiifm" path="res://main_scenes/player_hud/player_hud.gd" id="1_4mxvl"]
+[ext_resource type="PackedScene" uid="uid://3ry0ewvq5rax" path="res://main_scenes/player_hud/heat_distortion/heat_distortion.tscn" id="2_rdpnl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtt68"]
 bg_color = Color(0.8663629, 0.48540246, 0.27041382, 1)

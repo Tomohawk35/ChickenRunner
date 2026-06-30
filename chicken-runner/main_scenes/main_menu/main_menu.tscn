@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ccghfwhfqeydf"]
 
-[ext_resource type="Script" uid="uid://b8jppogi8mavb" path="res://MainScenes/main_menu/main_menu.gd" id="1_70phs"]
+[ext_resource type="Script" uid="uid://b8jppogi8mavb" path="res://main_scenes/main_menu/main_menu.gd" id="1_70phs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_h46x3"]
 font_size = 100
@@ -82,6 +82,14 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_egyqj")
 text = "Start Game"
 
 [node name="OptionsButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=374200735]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_70phs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_egyqj")
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=46686165]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 50

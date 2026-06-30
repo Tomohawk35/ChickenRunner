@@ -1,12 +1,21 @@
 [gd_scene format=3 uid="uid://cui4ytqb2hhgq"]
 
-[ext_resource type="PackedScene" uid="uid://c1w7ji2vf5rug" path="res://Cars/redcar.tscn" id="1_osk7m"]
+[ext_resource type="PackedScene" uid="uid://c1w7ji2vf5rug" path="res://cars/redcar.tscn" id="1_osk7m"]
 
 [node name="greencar" unique_id=1423788077 instance=ExtResource("1_osk7m")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=953042077]
 region_rect = Rect2(340.1523, 271.72717, 23.26654, 16.460693)
 
-[node name="Hitbox" parent="Area2D" parent_id_path=PackedInt32Array(1792964746) index="0" unique_id=253140855]
+[node name="CollisionShape2D" parent="." index="1" unique_id=1623007393]
+visible = false
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="2" unique_id=1906449151]
+visible = false
+
+[node name="Area2D" parent="." index="3" unique_id=1792964746]
+visible = false
+
+[node name="Hitbox" parent="Area2D" index="0" unique_id=253140855]
 visible = false
 position = Vector2(0, 2.9802322e-08)

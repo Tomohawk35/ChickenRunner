@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqt2r7qcy7pcn"]
 
-[ext_resource type="Script" uid="uid://eyntmvrtmrb6" path="res://MainScenes/victory_screen/victory_screen.gd" id="1_355gn"]
+[ext_resource type="Script" uid="uid://eyntmvrtmrb6" path="res://main_scenes/victory_screen/victory_screen.gd" id="1_355gn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tdgg3"]
 font_size = 100
