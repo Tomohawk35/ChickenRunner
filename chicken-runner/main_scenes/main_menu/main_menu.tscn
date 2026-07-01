@@ -46,6 +46,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_70phs")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2106437794]
+stream = ExtResource("2_y8l6a")
+max_polyphony = 4
+
 [node name="Panel" type="PanelContainer" parent="." unique_id=425148318]
 layout_mode = 1
 anchors_preset = 15
@@ -207,6 +211,3 @@ autowrap_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "Close"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2106437794]
-stream = ExtResource("2_y8l6a")

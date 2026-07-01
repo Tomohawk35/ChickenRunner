@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ceq306wayysht"]
+
+[ext_resource type="Script" uid="uid://c4g0yf44g8boo" path="res://autoload/audio_manager.gd" id="1_jqjfi"]
+[ext_resource type="AudioStream" uid="uid://djix8s06erfaa" path="res://assets/sfx/CHICKEN SFX UI BEEP 1.wav" id="2_10s6x"]
+
+[node name="AudioManager" type="Node" unique_id=1474964700]
+script = ExtResource("1_jqjfi")
+
+[node name="SoundEffectsPlayer" type="AudioStreamPlayer" parent="." unique_id=505457635]
+unique_name_in_owner = true
+stream = ExtResource("2_10s6x")
+max_polyphony = 4
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1433123115]
+unique_name_in_owner = true
