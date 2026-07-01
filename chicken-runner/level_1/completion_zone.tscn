@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dfneucp8uygcq"]
+
+[ext_resource type="Script" uid="uid://o5mqp1mtoxnb" path="res://level_1/completion_zone.gd" id="1_qf5to"]
+
+[node name="CompletionZone" type="Area2D" unique_id=457801201]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+priority = 1
+script = ExtResource("1_qf5to")

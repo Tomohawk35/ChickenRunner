@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c1nb4r8w7vss2"]
+
+[ext_resource type="PackedScene" uid="uid://ccghfwhfqeydf" path="res://main_scenes/main_menu/main_menu.tscn" id="1_7dofu"]
+
+[node name="Game" type="Node" unique_id=689970756]
+
+[node name="World" type="Node2D" parent="." unique_id=1375606989]
+
+[node name="GUI" type="CanvasLayer" parent="." unique_id=440256482]
+
+[node name="MainMenu" parent="GUI" unique_id=1235246227 instance=ExtResource("1_7dofu")]

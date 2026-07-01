@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b3q2rxnjpunna"]
+
+[ext_resource type="Script" uid="uid://cv5xayyfkxfcp" path="res://level_1/lane.gd" id="1_4cbry"]
+
+[node name="Lane" type="Marker2D" unique_id=418558146]
+gizmo_extents = 210.5
+script = ExtResource("1_4cbry")
