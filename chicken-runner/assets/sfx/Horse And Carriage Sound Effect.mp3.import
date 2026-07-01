@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgsongroi1ec4"
+path="res://.godot/imported/Horse And Carriage Sound Effect.mp3-3d5693385d9d2f84aabac48d0d5a3615.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/Horse And Carriage Sound Effect.mp3"
+dest_files=["res://.godot/imported/Horse And Carriage Sound Effect.mp3-3d5693385d9d2f84aabac48d0d5a3615.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
