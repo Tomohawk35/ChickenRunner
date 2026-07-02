@@ -14,35 +14,10 @@ func start_loop(objects: Array[PackedScene], proximity_check: float, speed_rando
 	_proximity_check = proximity_check
 	_speed_randomness = speed_randomness
 	while true:
-		if can_spawn():
-			spawn_car()
+		spawn_car()
 		await get_tree().create_timer(spawn_delay + randf_range(-1.0, 1.0)).timeout
 
-func can_spawn() -> bool:
-	#for obj in _object_pool:
-		#if abs(obj.global_position.y - global_position.y) < 10.0:
-			#var dx = obj.global_position.x - global_position.x
-			#var dist = abs(dx)
-			#if dist < _proximity_check:
-				#if move_right and dx > 0:
-					#return false
-				#if not move_right and dx < 0:
-					#return false
-	return true
 	
-	#for child in get_children():
-		#if child is CharacterBody2D:
-			#if abs(child.global_position.y - spawn_pos.y) < 10.0:
-				#var dx = child.global_position.x - spawn_pos.x
-				#var dist = abs(dx)
-				#if dist < proximity_check:
-					#if lane.move_right and dx > 0:
-						#return false
-					#if not lane.move_right and dx < 0:
-						#return false
-	#return true
-
-
 func spawn_car() -> void:
 	var car_scene : PackedScene = _spawn_pool.pick_random()
 	if car_scene == null:

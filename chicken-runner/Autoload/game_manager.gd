@@ -5,12 +5,22 @@ signal heat_changed(value: float)
 
 enum GameState { MAIN_MENU, PLAYING, GAME_OVER }
 
-const FADE_DURATION : float = 0.2
+const FADE_DURATION : float = 0.6
 const LAST_LEVEL : int = 1
+
+@onready var joke: Label = $CanvasLayer/joke
 
 var current_level : int = 0
 var heat_level : float = 0.0
-
+var jokes: Array[String] = [
+	# Dad chicken jokes
+	"Why did the chicken join a band? Because it had the drumsticks!",
+	"What do you call a chicken that crosses the road, rolls in the mud, and crosses back? A dirty double-crosser!",
+	"Why don't chickens wear pants? Because their peckers are on their faces!",
+	# Chicken facts
+	"Did you know? Chickens can remember over 100 different faces! They're smarter than you think.",
+	"Fun fact: A chicken's heart beats 300-400 times per minute - faster than a hummingbird!"
+]
 #var _current_state: GameState
 var _game_scenes : Dictionary[String, String] = {
 	"main_menu": "uid://ccghfwhfqeydf",
@@ -28,7 +38,7 @@ func _ready() -> void:
 	#if OS.is_debug_build():
 		#change_scene("level_01")
 	#Hit.connect(_on_hit)
-	pass
+	joke.hide()
 
 func _fade_out() -> Tween:
 	var tween : Tween = create_tween()
@@ -42,8 +52,6 @@ func _fade_in() -> Tween:
 	tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	return tween
 
-#func _on_hit() -> void:
-	#_current_state = GameState.GAME_OVER
 
 func _load_scene_resource(path: Variant) -> Resource:
 	if path is PackedScene:
@@ -53,11 +61,15 @@ func _load_scene_resource(path: Variant) -> Resource:
 func change_scene(scene: String) -> void:
 	if !_game_scenes.has(scene):
 		return
+	joke.text = jokes.pick_random()
+	joke.show()
+
 	await _fade_out().finished
 	_current_scene.queue_free()
 	var next_scene : PackedScene = _load_scene_resource(_game_scenes[scene])
 	_current_scene = next_scene.instantiate()
 	_root.add_child(_current_scene)
+	joke.hide()
 	await _fade_in().finished
 
 func new_game() -> void:

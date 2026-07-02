@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://ca5oy0v1raa6w"]
 
-[ext_resource type="Script" uid="uid://cjv6rbo04veej" path="res://autoload/game_manager.gd" id="1_1shkg"]
+[ext_resource type="Script" uid="uid://cjv6rbo04veej" path="res://Autoload/game_manager.gd" id="1_1shkg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1shkg"]
+font_size = 45
+font_color = Color(1, 0.50980395, 0, 1)
+outline_size = 5
+outline_color = Color(0.86960465, 0.3289683, 0.77553135, 1)
+shadow_size = 13
+shadow_color = Color(1, 0, 0, 0.7764706)
 
 [node name="GameManager" type="Node" unique_id=997689895]
 script = ExtResource("1_1shkg")
@@ -16,3 +24,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
+
+[node name="joke" type="Label" parent="CanvasLayer" unique_id=2097424450]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = -1
+anchor_left = 0.0171875
+anchor_top = 0.80972224
+anchor_right = 0.98515624
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_1shkg")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true

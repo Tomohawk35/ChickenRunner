@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bvj4u3smrfbcr"]
 
 [ext_resource type="Texture2D" uid="uid://cy4e6p2tab38e" path="res://assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="1_eef11"]
-[ext_resource type="PackedScene" uid="uid://dyfc3e0yrrdkp" path="res://chicken/chicken.tscn" id="2_kw4bk"]
+[ext_resource type="PackedScene" uid="uid://dyfc3e0yrrdkp" path="res://chicken/Chicken.tscn" id="2_kw4bk"]
 [ext_resource type="PackedScene" uid="uid://btfy4nhytiw0l" path="res://level_1/spawner.tscn" id="3_u1mx0"]
 [ext_resource type="PackedScene" uid="uid://b3q2rxnjpunna" path="res://level_1/lane.tscn" id="4_u1mx0"]
 [ext_resource type="PackedScene" uid="uid://dfneucp8uygcq" path="res://level_1/completion_zone.tscn" id="6_u1mx0"]
@@ -572,4 +572,3 @@ shape = SubResource("RectangleShape2D_rtt68")
 debug_color = Color(0.09949931, 0.63286144, 0.41357645, 0.41960785)
 
 [node name="PlayerHud" parent="." unique_id=1992921905 instance=ExtResource("7_kwhby")]
-visible = false

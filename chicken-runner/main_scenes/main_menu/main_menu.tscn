@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8jppogi8mavb" path="res://main_scenes/main_menu/main_menu.gd" id="1_70phs"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_h46x3"]
+[sub_resource type="LabelSettings" id="LabelSettings_pq8uq"]
 font_size = 100
 font_color = Color(1, 0.50980395, 0, 1)
 outline_size = 5
@@ -63,7 +63,7 @@ alignment = 1
 [node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1718537717]
 layout_mode = 2
 text = "Chicken Runner"
-label_settings = SubResource("LabelSettings_h46x3")
+label_settings = SubResource("LabelSettings_pq8uq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
