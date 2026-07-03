@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bijvrkem5egfv" path="res://assets/kenney_rpg-urban-pack/Tilemap/tilemap_packed.png" id="2_rh13a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c78a1"]
-size = Vector2(21.428583, 20.714294)
+size = Vector2(21.428583, 16.428577)
 
 [node name="redcar" type="CharacterBody2D" unique_id=1423788077]
 scale = Vector2(1.4, 1.4)
@@ -17,7 +17,7 @@ region_enabled = true
 region_rect = Rect2(244.89536, 264.2903, 21.90915, 24.226501)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1623007393]
-position = Vector2(-5.108969e-07, 1.0714277)
-scale = Vector2(0.9999994, 0.9999994)
+position = Vector2(-5.108968e-07, 3.2142837)
+scale = Vector2(0.99999934, 0.99999934)
 shape = SubResource("RectangleShape2D_c78a1")
 debug_color = Color(0.9679639, 0, 0.47395974, 0.41960785)

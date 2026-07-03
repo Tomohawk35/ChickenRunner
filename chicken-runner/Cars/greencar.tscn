@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cui4ytqb2hhgq"]
 
-[ext_resource type="PackedScene" uid="uid://c1w7ji2vf5rug" path="res://cars/redcar.tscn" id="1_osk7m"]
+[ext_resource type="PackedScene" uid="uid://c1w7ji2vf5rug" path="res://Cars/redcar.tscn" id="1_osk7m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osk7m"]
+size = Vector2(20.00002, 12.857152)
 
 [node name="greencar" unique_id=1423788077 instance=ExtResource("1_osk7m")]
 
@@ -8,8 +11,6 @@
 region_rect = Rect2(340.1523, 271.72717, 23.26654, 16.460693)
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1623007393]
-visible = false
-
-[node name="VisibleOnScreenNotifier2D" parent="." index="2" unique_id=1906449151]
-visible = false
-
+position = Vector2(-9.3664426e-07, -0.7142855)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_osk7m")

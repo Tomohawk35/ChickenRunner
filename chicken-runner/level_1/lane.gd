@@ -25,13 +25,11 @@ func spawn_car() -> void:
 	var car : MovingObject = car_scene.instantiate() as MovingObject
 	if car == null:
 		return
+	add_child(car)
 	car.global_position = global_position
 	
-	# Direction
 	var dir : Vector2 = Vector2.RIGHT if move_right else Vector2.LEFT
 	car.set_direction(dir)
 	
-	# Speed
 	var final_speed = lane_speed + randf_range(-_speed_randomness, _speed_randomness)
 	car.set_speed(final_speed)
-	add_child(car)
