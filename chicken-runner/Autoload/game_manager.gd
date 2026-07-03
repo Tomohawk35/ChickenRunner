@@ -5,7 +5,7 @@ signal heat_changed(value: float)
 
 enum GameState { MAIN_MENU, PLAYING, GAME_OVER }
 
-const FADE_DURATION : float = 0.6
+const FADE_DURATION : float = 0.3
 const LAST_LEVEL : int = 1
 
 @onready var joke: Label = $CanvasLayer/joke
@@ -69,8 +69,8 @@ func change_scene(scene: String) -> void:
 	var next_scene : PackedScene = _load_scene_resource(_game_scenes[scene])
 	_current_scene = next_scene.instantiate()
 	_root.add_child(_current_scene)
-	joke.hide()
 	await _fade_in().finished
+	joke.hide()
 
 func new_game() -> void:
 	current_level = 1

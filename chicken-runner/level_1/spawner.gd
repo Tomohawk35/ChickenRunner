@@ -33,3 +33,5 @@ func _start_lanes() -> void:
 	var object_scenes : Array[PackedScene] = []
 	for s in SPAWN_OBJECTS[spawnable_objects]:
 		object_scenes.append(load(s) as PackedScene)
+	for lane in lanes:
+		lane.start_loop(object_scenes, 400.0, speed_randomness)
