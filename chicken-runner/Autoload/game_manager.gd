@@ -12,6 +12,9 @@ const LAST_LEVEL : int = 1
 
 var current_level : int = 0
 var heat_level : float = 0.0
+var _cooling_count : int = 0
+var is_cooling : bool:
+	get: return _cooling_count > 0
 var jokes: Array[String] = [
 	# Dad chicken jokes
 	"Why did the chicken join a band? Because it had the drumsticks!",
@@ -61,6 +64,7 @@ func _load_scene_resource(path: Variant) -> Resource:
 func change_scene(scene: String) -> void:
 	if !_game_scenes.has(scene):
 		return
+	get_tree().paused = false
 	joke.text = jokes.pick_random()
 	joke.show()
 
@@ -73,6 +77,7 @@ func change_scene(scene: String) -> void:
 	joke.hide()
 
 func new_game() -> void:
+	get_tree().paused = false
 	current_level = 1
 	heat_level = 0.0
 	change_scene("level_" + str(current_level))
@@ -92,3 +97,15 @@ func increase_heat(value: float) -> void:
 	heat_changed.emit(heat_level)
 	if heat_level >= 100:
 		game_over()
+
+func decrease_heat(value: float) -> void:
+	heat_level -= value
+	if heat_level < 0:
+		heat_level = 0
+	heat_changed.emit(heat_level)
+
+func cooling_ref() -> void:
+	_cooling_count += 1
+
+func cooling_unref() -> void:
+	_cooling_count = maxi(_cooling_count - 1, 0)
