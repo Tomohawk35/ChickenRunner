@@ -25,6 +25,8 @@ func _process(delta: float) -> void:
 		else:
 			GameManager.increase_heat(HEAT_GAIN_AMOUNT)
 
+
+
 func _on_heat_changed(value: float) -> void:
 	temperature_meter.set_value_no_signal(value)
 
