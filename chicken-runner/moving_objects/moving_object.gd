@@ -8,8 +8,8 @@ class_name MovingObject
 var direction : Vector2 = Vector2.RIGHT
 var has_entered_screen : bool = false
 
-func _ready() -> void:
-	$Area2D.body_entered.connect(_on_area_2d_body_entered)
+#func _ready() -> void:
+	#$Area2D.body_entered.connect(_on_area_2d_body_entered)
 
 func _process(_delta: float) -> void:
 	if global_position.x > 4000 or global_position.x < -200:
@@ -28,6 +28,6 @@ func set_direction(new_direction: Vector2):
 func set_speed(new_speed: float):
 	speed = new_speed
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Chicken:
-		print("I hit the chicken!")
+#func _on_area_2d_body_entered(body: Node2D) -> void:
+	#if body is Chicken:
+		#print("I hit the chicken!")
