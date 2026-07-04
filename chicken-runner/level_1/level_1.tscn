@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://bvj4u3smrfbcr"]
 
 [ext_resource type="Texture2D" uid="uid://cy4e6p2tab38e" path="res://assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="1_eef11"]
-[ext_resource type="PackedScene" uid="uid://dyfc3e0yrrdkp" path="res://chicken/Chicken.tscn" id="2_kw4bk"]
+[ext_resource type="PackedScene" uid="uid://dyfc3e0yrrdkp" path="res://chicken/chicken.tscn" id="2_kw4bk"]
 [ext_resource type="PackedScene" uid="uid://btfy4nhytiw0l" path="res://level_1/spawner.tscn" id="3_u1mx0"]
 [ext_resource type="PackedScene" uid="uid://b3q2rxnjpunna" path="res://level_1/lane.tscn" id="4_u1mx0"]
 [ext_resource type="PackedScene" uid="uid://dfneucp8uygcq" path="res://level_1/completion_zone.tscn" id="6_u1mx0"]
 [ext_resource type="PackedScene" uid="uid://cfuo2jrippyop" path="res://main_scenes/player_hud/player_hud.tscn" id="7_kwhby"]
-[ext_resource type="PackedScene" uid="uid://dy2p420jn8qx6" path="res://Clouds/cloud.tscn" id="8_oy4xo"]
+[ext_resource type="PackedScene" uid="uid://dy2p420jn8qx6" path="res://cloud/cloud.tscn" id="8_oy4xo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_10lpg"]
 texture = ExtResource("1_eef11")
