@@ -12,7 +12,7 @@ const SPAWN_OBJECTS : Dictionary[MovingObjects, Array] = {
 	]
 }
 
-@export var spawnable_objects : MovingObjects = MovingObjects.CARS
+@export var spawnable_objects : Array[MovingObjects] = [MovingObjects.CARS]
 @export var speed_randomness: float = 25.0
 
 var lanes: Array[SpawnLane]
@@ -31,7 +31,8 @@ func _compile_lanes() -> void:
 
 func _start_lanes() -> void:
 	var object_scenes : Array[PackedScene] = []
-	for s in SPAWN_OBJECTS[spawnable_objects]:
-		object_scenes.append(load(s) as PackedScene)
+	for object_type in spawnable_objects:
+		for object_scene in SPAWN_OBJECTS[object_type]:
+			object_scenes.append(load(object_scene) as PackedScene)
 	for lane in lanes:
 		lane.start_loop(object_scenes, 400.0, speed_randomness)
