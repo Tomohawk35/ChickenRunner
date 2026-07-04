@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b3q2rxnjpunna" path="res://level_1/lane.tscn" id="4_u1mx0"]
 [ext_resource type="PackedScene" uid="uid://dfneucp8uygcq" path="res://level_1/completion_zone.tscn" id="6_u1mx0"]
 [ext_resource type="PackedScene" uid="uid://cfuo2jrippyop" path="res://main_scenes/player_hud/player_hud.tscn" id="7_kwhby"]
-[ext_resource type="PackedScene" uid="uid://dy2p420jn8qx6" path="res://cloud/cloud.tscn" id="8_oy4xo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_10lpg"]
 texture = ExtResource("1_eef11")
@@ -520,6 +519,7 @@ position = Vector2(0, -75)
 zoom = Vector2(2, 2)
 
 [node name="Spawner" parent="." unique_id=496078413 instance=ExtResource("3_u1mx0")]
+spawnable_objects = Array[int]([0, 1])
 
 [node name="Lane" parent="Spawner" unique_id=418558146 instance=ExtResource("4_u1mx0")]
 position = Vector2(1279, 392)
@@ -574,18 +574,3 @@ shape = SubResource("RectangleShape2D_rtt68")
 debug_color = Color(0.09949931, 0.63286144, 0.41357645, 0.41960785)
 
 [node name="PlayerHud" parent="." unique_id=1992921905 instance=ExtResource("7_kwhby")]
-
-[node name="Cloud1" parent="." unique_id=770936481 instance=ExtResource("8_oy4xo")]
-position = Vector2(310, -474)
-ground_y = 300.0
-speed = 100.0
-
-[node name="Cloud2" parent="." unique_id=609314496 instance=ExtResource("8_oy4xo")]
-position = Vector2(700, -80)
-move_right = false
-ground_y = 150.0
-speed = 35.0
-
-[node name="Cloud3" parent="." unique_id=62483886 instance=ExtResource("8_oy4xo")]
-position = Vector2(1110, -207)
-speed = 50.0
