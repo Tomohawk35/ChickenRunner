@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b31c7dps6yuvs"
+path="res://.godot/imported/CHICKEN Step Forward MIXED.mp3-afe3a74e99047f0e3197d288a69493e2.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/CHICKEN Step Forward MIXED.mp3"
+dest_files=["res://.godot/imported/CHICKEN Step Forward MIXED.mp3-afe3a74e99047f0e3197d288a69493e2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

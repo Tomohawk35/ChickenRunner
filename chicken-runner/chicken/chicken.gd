@@ -16,6 +16,7 @@ func _physics_process(_delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is MovingObject:
+		AudioManager.play_chicken_hit_sound()
 		GameManager.change_scene("game_over")
 
 func _on_area_entered(area: Area2D) -> void:

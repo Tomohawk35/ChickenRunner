@@ -14,3 +14,6 @@ region_rect = Rect2(340.1523, 271.72717, 23.26654, 16.460693)
 position = Vector2(-9.3664426e-07, -0.7142855)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_osk7m")
+
+[node name="Hitbox" parent="Area2D" parent_id_path=PackedInt32Array(1792964746) index="0" unique_id=253140855]
+position = Vector2(0, 2.9802322e-08)
