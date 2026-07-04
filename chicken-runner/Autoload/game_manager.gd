@@ -2,11 +2,13 @@ extends Node
 
 #signal Hit
 signal heat_changed(value: float)
+signal scene_loaded
 
 enum GameState { MAIN_MENU, PLAYING, GAME_OVER }
 
 const FADE_DURATION : float = 0.3
 const LAST_LEVEL : int = 1
+const LOAD_SCREEN_MIN_DURATION : float = 3.0
 
 @onready var joke: Label = $CanvasLayer/joke
 
@@ -41,17 +43,22 @@ func _ready() -> void:
 	#if OS.is_debug_build():
 		#change_scene("level_01")
 	#Hit.connect(_on_hit)
-	joke.hide()
+	#joke.hide()
+	pass
 
 func _fade_out() -> Tween:
 	var tween : Tween = create_tween()
 	tween.tween_property(color_rect, "color:a", 255, FADE_DURATION)
+	tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	tween.tween_property(joke, "modulate:a", 255, FADE_DURATION)
 	tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	return tween
 
 func _fade_in() -> Tween:
 	var tween : Tween = create_tween()
 	tween.tween_property(color_rect, "color:a", 0, FADE_DURATION)
+	tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	tween.tween_property(joke, "modulate:a", 0, FADE_DURATION)
 	tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	return tween
 
@@ -64,20 +71,30 @@ func _load_scene_resource(path: Variant) -> Resource:
 func change_scene(scene: String) -> void:
 	if !_game_scenes.has(scene):
 		return
-	get_tree().paused = false
+	
+	_tree.paused = true
 	joke.text = jokes.pick_random()
-	joke.show()
+
+	
+	var start_time : int = Time.get_ticks_msec()
 
 	await _fade_out().finished
 	_current_scene.queue_free()
 	var next_scene : PackedScene = _load_scene_resource(_game_scenes[scene])
 	_current_scene = next_scene.instantiate()
 	_root.add_child(_current_scene)
+	
+	var load_duration : int = Time.get_ticks_msec() - start_time
+	
+	await _tree.create_timer(clamp(LOAD_SCREEN_MIN_DURATION - (load_duration / 1000.0), 0.0, LOAD_SCREEN_MIN_DURATION)).timeout
+	
 	await _fade_in().finished
-	joke.hide()
+	scene_loaded.emit() # TODO: NEED TO LISTEN FOR SIGNAL BEFORE STARTING LEVELS
+	_tree.paused = false
+	#joke.hide()
 
 func new_game() -> void:
-	get_tree().paused = false
+	_tree.paused = false
 	current_level = 1
 	heat_level = 0.0
 	change_scene("level_" + str(current_level))

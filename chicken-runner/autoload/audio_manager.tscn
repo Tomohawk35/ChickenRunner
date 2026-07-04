@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://djix8s06erfaa" path="res://assets/sfx/CHICKEN SFX UI BEEP 1.wav" id="2_5aqdv"]
 
 [node name="AudioManager" type="Node" unique_id=1474964700]
+process_mode = 3
 script = ExtResource("1_mf8l3")
 
 [node name="SoundEffectsPlayer" type="AudioStreamPlayer" parent="." unique_id=505457635]
