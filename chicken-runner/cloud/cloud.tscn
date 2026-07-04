@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dy2p420jn8qx6"]
 
 [ext_resource type="Texture2D" uid="uid://rm7q846l1oxk" path="res://assets/minetest_textures/smoke_puff.png" id="1_ht3s3"]
-[ext_resource type="Script" uid="uid://dgsu4nodcwpdy" path="res://Clouds/cloud.gd" id="1_l4448"]
+[ext_resource type="Script" uid="uid://dgsu4nodcwpdy" path="res://cloud/cloud.gd" id="1_l4448"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wa8kl"]
 size = Vector2(160, 80)

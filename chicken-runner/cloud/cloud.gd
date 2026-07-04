@@ -1,4 +1,5 @@
 extends MovingObject
+class_name Cloud
 
 @export var move_right: bool = true
 @export var ground_y: float = 460.0
@@ -26,8 +27,10 @@ func _process(delta: float) -> void:
 	elif position.x < -wrap_width:
 		position.x = wrap_width
 
-func _on_shadow_zone_body_entered(_body: Node) -> void:
-	GameManager.cooling_ref()
+func _on_shadow_zone_body_entered(body: Node2D) -> void:
+	if body is Chicken:
+		GameManager.cooling_ref()
 
-func _on_shadow_zone_body_exited(_body: Node) -> void:
-	GameManager.cooling_unref()
+func _on_shadow_zone_body_exited(body: Node2D) -> void:
+	if body is Chicken:
+		GameManager.cooling_unref()
