@@ -8,10 +8,15 @@ size = Vector2(160, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c78a1"]
 
-[node name="Cloud" type="CharacterBody2D" unique_id=595913114]
+[node name="Cloud" type="CharacterBody2D" unique_id=595913114 node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_l4448")
+speed = 150.0
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=751199624]
+modulate = Color(1, 1, 1, 0.7137255)
+z_index = 1
+position = Vector2(0, -400)
 texture = ExtResource("1_ht3s3")
 
 [node name="ShadowVisual" type="Sprite2D" parent="." unique_id=1834934618]

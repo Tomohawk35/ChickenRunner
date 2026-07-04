@@ -1,14 +1,17 @@
 extends Node2D
 class_name Spawner
 
-enum MovingObjects { CARS }
+enum MovingObjects { CARS, CLOUDS }
 
 # Hopefully setting it up this way makes it easier to use for different themes of objects
 const SPAWN_OBJECTS : Dictionary[MovingObjects, Array] = {
 	MovingObjects.CARS : [
-		"uid://cui4ytqb2hhgq",
+		#"uid://cui4ytqb2hhgq",
 		"uid://c1w7ji2vf5rug",
-		"uid://ccfgae2dvkr73"
+		#"uid://ccfgae2dvkr73"
+	], 
+	MovingObjects.CLOUDS : [
+		"uid://dy2p420jn8qx6"
 	]
 }
 
