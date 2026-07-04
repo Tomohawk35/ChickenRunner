@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://c1w7ji2vf5rug"]
 
-[ext_resource type="Script" uid="uid://cjf84wepm7iux" path="res://Cars/cars.gd" id="1_uijal"]
+[ext_resource type="Script" uid="uid://cjf84wepm7iux" path="res://cars/cars.gd" id="1_uijal"]
 [ext_resource type="Texture2D" uid="uid://bijvrkem5egfv" path="res://assets/kenney_rpg-urban-pack/Tilemap/tilemap_packed.png" id="2_rh13a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c78a1"]
 size = Vector2(21.428583, 16.428577)
 
-[node name="redcar" type="CharacterBody2D" unique_id=1423788077]
+[node name="redcar" type="CharacterBody2D" unique_id=1423788077 node_paths=PackedStringArray("sprite")]
 scale = Vector2(1.4, 1.4)
 collision_mask = 2
 script = ExtResource("1_uijal")
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=953042077]
 texture = ExtResource("2_rh13a")
