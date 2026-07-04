@@ -14,22 +14,21 @@ func start_loop(objects: Array[PackedScene], proximity_check: float, speed_rando
 	_proximity_check = proximity_check
 	_speed_randomness = speed_randomness
 	while true:
-		spawn_car()
+		spawn_object()
 		await get_tree().create_timer(spawn_delay + randf_range(-1.0, 1.0)).timeout
 
 	
-func spawn_car() -> void:
-	var car_scene : PackedScene = _spawn_pool.pick_random()
-	if car_scene == null:
+func spawn_object() -> void:
+	var obj_packed : PackedScene = _spawn_pool.pick_random()
+	if obj_packed == null:
 		return
-	var car : MovingObject = car_scene.instantiate() as MovingObject
-	if car == null:
-		return
-	add_child(car)
-	car.global_position = global_position
-	
+	var obj : MovingObject = obj_packed.instantiate()
+	obj.set_initial_position(global_position)
 	var dir : Vector2 = Vector2.RIGHT if move_right else Vector2.LEFT
-	car.set_direction(dir)
+	obj.set_direction(dir)
+	var final_speed = obj.speed + randf_range(-_speed_randomness, _speed_randomness)
+	obj.set_speed(final_speed)
+	add_child(obj)
+	#obj.global_position = global_position
 	
-	var final_speed = lane_speed + randf_range(-_speed_randomness, _speed_randomness)
-	car.set_speed(final_speed)
+	
