@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ccfgae2dvkr73"]
 
-[ext_resource type="PackedScene" uid="uid://c1w7ji2vf5rug" path="res://cars/redcar.tscn" id="1_u3ys1"]
+[ext_resource type="PackedScene" uid="uid://c1w7ji2vf5rug" path="res://Cars/redcar.tscn" id="1_u3ys1"]
 
 [node name="yellowcar" unique_id=1423788077 instance=ExtResource("1_u3ys1")]
 

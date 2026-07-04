@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dy2p420jn8qx6"]
+
+[ext_resource type="Texture2D" uid="uid://rm7q846l1oxk" path="res://assets/minetest_textures/smoke_puff.png" id="1_ht3s3"]
+[ext_resource type="Script" uid="uid://dgsu4nodcwpdy" path="res://Clouds/cloud.gd" id="1_l4448"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wa8kl"]
+size = Vector2(160, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c78a1"]
+
+[node name="Cloud" type="CharacterBody2D" unique_id=595913114]
+script = ExtResource("1_l4448")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=751199624]
+texture = ExtResource("1_ht3s3")
+
+[node name="ShadowVisual" type="Sprite2D" parent="." unique_id=1834934618]
+modulate = Color(0, 0, 0, 0.3)
+scale = Vector2(1.5, 0.6)
+texture = ExtResource("1_ht3s3")
+
+[node name="ShadowZone" type="Area2D" parent="." unique_id=1136774353]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShadowZone" unique_id=140826808]
+shape = SubResource("RectangleShape2D_wa8kl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=681162946]
+shape = SubResource("RectangleShape2D_c78a1")
+disabled = true

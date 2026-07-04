@@ -2,9 +2,36 @@
 
 [ext_resource type="Script" uid="uid://c5ndpe7hmiifm" path="res://main_scenes/player_hud/player_hud.gd" id="1_4mxvl"]
 [ext_resource type="PackedScene" uid="uid://3ry0ewvq5rax" path="res://main_scenes/player_hud/heat_distortion/heat_distortion.tscn" id="2_rdpnl"]
+[ext_resource type="PackedScene" uid="uid://ck5y5co86o7vp" path="res://main_scenes/pause_menu/pause_menu.tscn" id="3_fecom"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtt68"]
 bg_color = Color(0.8663629, 0.48540246, 0.27041382, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1af6"]
+bg_color = Color(0, 0.7254902, 0.24313726, 0.827451)
+border_width_left = 20
+border_width_top = 15
+border_width_right = 20
+border_width_bottom = 15
+border_color = Color(0.8, 0.8, 0, 0.5764706)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nc5c8"]
+bg_color = Color(0, 0.6, 1, 1)
+border_width_left = 20
+border_width_top = 15
+border_width_right = 20
+border_width_bottom = 15
+border_color = Color(0.8, 0.2509804, 0, 0.5764706)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 1
 
 [node name="PlayerHud" type="CanvasLayer" unique_id=1992921905]
 script = ExtResource("1_4mxvl")
@@ -42,3 +69,19 @@ layout_mode = 2
 [node name="LevelLabel" type="Label" parent="PanelContainer/MarginContainer" unique_id=1038726977]
 unique_name_in_owner = true
 layout_mode = 2
+text = "Level 1"
+
+[node name="Pause" type="Button" parent="." unique_id=1427374597]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -138.0
+offset_bottom = 71.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_j1af6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nc5c8")
+text = "Pause"
+
+[node name="Pause_menu" parent="." unique_id=176501694 instance=ExtResource("3_fecom")]
+pivot_offset_ratio = Vector2(0.5, 0.5)

@@ -4,10 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bijvrkem5egfv" path="res://assets/kenney_rpg-urban-pack/Tilemap/tilemap_packed.png" id="2_rh13a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c78a1"]
-size = Vector2(16, 17.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ouvh5"]
-size = Vector2(20, 21)
+size = Vector2(21.428583, 16.428577)
 
 [node name="redcar" type="CharacterBody2D" unique_id=1423788077]
 scale = Vector2(1.4, 1.4)
@@ -20,19 +17,7 @@ region_enabled = true
 region_rect = Rect2(244.89536, 264.2903, 21.90915, 24.226501)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1623007393]
-position = Vector2(0, 0.75)
+position = Vector2(-5.108968e-07, 3.2142837)
+scale = Vector2(0.99999934, 0.99999934)
 shape = SubResource("RectangleShape2D_c78a1")
 debug_color = Color(0.9679639, 0, 0.47395974, 0.41960785)
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1906449151]
-rect = Rect2(-11, -10, 22, 22)
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1792964746]
-
-[node name="Hitbox" type="CollisionShape2D" parent="Area2D" unique_id=253140855]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_ouvh5")
-debug_color = Color(0, 0.63136774, 0.46623993, 0.41960785)
-
-[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
