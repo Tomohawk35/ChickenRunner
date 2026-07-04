@@ -19,7 +19,10 @@ func _physics_process(_delta: float) -> void:
 	velocity = direction.normalized() * speed
 	move_and_slide()
 
-func set_direction(new_direction: Vector2):
+func set_initial_position(pos: Vector2) -> void:
+	global_position = pos
+	
+func set_direction(new_direction: Vector2) -> void:
 	direction = new_direction
 	
 	if sprite:
