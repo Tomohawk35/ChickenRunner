@@ -13,7 +13,6 @@ const CHICKEN_SFX_UI_BEEP_1 = preload("uid://djix8s06erfaa")
 
 @onready var credits_panel: PanelContainer = %CreditsPanel
 @onready var close_button: Button = %CloseButton
-@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
 	start_game_button.pressed.connect(_on_start_game_button_pressed)

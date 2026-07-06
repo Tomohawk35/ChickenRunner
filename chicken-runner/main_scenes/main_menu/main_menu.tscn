@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ccghfwhfqeydf"]
 
 [ext_resource type="Script" uid="uid://b8jppogi8mavb" path="res://main_scenes/main_menu/main_menu.gd" id="1_70phs"]
-[ext_resource type="AudioStream" uid="uid://djix8s06erfaa" path="res://assets/sfx/CHICKEN SFX UI BEEP 1.wav" id="2_y8l6a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pq8uq"]
 font_size = 100
@@ -51,10 +50,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_70phs")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2106437794]
-stream = ExtResource("2_y8l6a")
-max_polyphony = 4
 
 [node name="Panel" type="PanelContainer" parent="." unique_id=425148318]
 layout_mode = 1
