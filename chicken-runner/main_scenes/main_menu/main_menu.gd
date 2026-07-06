@@ -9,6 +9,7 @@ const CHICKEN_SFX_UI_BEEP_1 = preload("uid://djix8s06erfaa")
 @onready var options_button: Button = %OptionsButton
 @onready var exit_button: Button = %ExitButton
 @onready var credits_button: Button = %CreditsButton
+@onready var v_box_container: VBoxContainer = $Panel/VBoxContainer/VBoxContainer
 
 @onready var credits_panel: PanelContainer = %CreditsPanel
 @onready var close_button: Button = %CloseButton
@@ -39,6 +40,7 @@ func _on_options_button_pressed() -> void:
 
 func _on_credits_button_pressed() -> void:
 	AudioManager.play_button_click_sound()
+	v_box_container.modulate.a = 0.0
 	credits_panel.show()
 
 func _on_exit_button_pressed() -> void:
@@ -48,6 +50,6 @@ func _on_exit_button_pressed() -> void:
 func _on_close_button_pressed() -> void:
 	AudioManager.play_button_click_sound()
 	credits_panel.hide()
-
+	v_box_container.modulate.a = 1.0
 func _on_button_hover() -> void:
 	AudioManager.play_button_hover_sound()

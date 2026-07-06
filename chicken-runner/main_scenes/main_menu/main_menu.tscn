@@ -37,6 +37,12 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 corner_detail = 1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8l6a"]
+bg_color = Color(0, 0.7254902, 0.24313726, 0.827451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7aam"]
+bg_color = Color(0, 0.6, 1, 1)
+
 [node name="MainMenu" type="Control" unique_id=1235246227]
 layout_mode = 3
 anchors_preset = 15
@@ -118,10 +124,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -198.5
-offset_top = -42.5
-offset_right = 198.5
-offset_bottom = 42.5
+offset_left = -203.0
+offset_top = -151.0
+offset_right = 204.0
+offset_bottom = 248.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -130,11 +136,12 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CreditsPanel/MarginContainer" unique_id=1519289530]
 layout_mode = 2
+theme_override_constants/separation = 40
 alignment = 1
 
 [node name="Label" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer" unique_id=1650732432]
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 30
 text = "Credits"
 horizontal_alignment = 1
 
@@ -152,6 +159,7 @@ alignment = 1
 [node name="Label" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1777895057]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 22
 text = "Gamers Home Summer Game Jam 2026 Submission"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -162,6 +170,7 @@ layout_mode = 2
 [node name="Label2" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2063876521]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 22
 text = "Team Lead: ChickenVicken"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -169,6 +178,7 @@ autowrap_mode = 2
 [node name="Label3" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=831178719]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 22
 text = "Programmers: Tomohawk, AjithKuppam"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -176,6 +186,7 @@ autowrap_mode = 2
 [node name="Label4" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=849816256]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 22
 text = "Artists: Peri"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -183,6 +194,7 @@ autowrap_mode = 2
 [node name="Label5" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=458734261]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 22
 text = "Sound: MiniComp"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -210,4 +222,6 @@ autowrap_mode = 2
 [node name="CloseButton" type="Button" parent="CreditsPanel/MarginContainer/VBoxContainer" unique_id=907908448]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_y8l6a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q7aam")
 text = "Close"

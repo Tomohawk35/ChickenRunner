@@ -9,24 +9,14 @@ class_name Cloud
 @onready var shadow_zone: Area2D = $ShadowZone
 
 func _ready() -> void:
-	#var offset_y = ground_y - global_position.y
-	#shadow_visual.position.y = offset_y
-	#shadow_zone.position.y = offset_y
 	shadow_zone.body_entered.connect(_on_shadow_zone_body_entered)
 	shadow_zone.body_exited.connect(_on_shadow_zone_body_exited)
-	#set_direction(Vector2.RIGHT if move_right else Vector2.LEFT)
 
 func _physics_process(delta: float) -> void:
 	super(delta)
 
 func _process(delta: float) -> void:
 	super(delta)
-	#var dir = 1 if move_right else -1
-	#position.x += speed * dir * delta
-	#if position.x > wrap_width:
-		#position.x = -wrap_width
-	#elif position.x < -wrap_width:
-		#position.x = wrap_width
 
 func _on_shadow_zone_body_entered(body: Node2D) -> void:
 	if body is Chicken:
