@@ -199,6 +199,14 @@ text = "Sound: MiniComp"
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="Label6" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=159571609]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Music: Seberster"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1581234763]
 visible = false
 custom_minimum_size = Vector2(384, 0)
