@@ -14,3 +14,4 @@ max_polyphony = 4
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1433123115]
 unique_name_in_owner = true
+bus = &"Music"
