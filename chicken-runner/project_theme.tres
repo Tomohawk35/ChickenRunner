@@ -1,0 +1,95 @@
+[gd_resource type="Theme" format=3 uid="uid://b1sjlmnw4xnce"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tf5ee"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.8784314, 0.5803922, 0.49411765, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8784314, 0.5803922, 0.49411765, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpbpl"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.9019608, 0.4509804, 0.29803923, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.99215686, 0.8627451, 0.5921569, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xx24o"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.9019608, 0.4509804, 0.29803923, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.99215686, 0.8627451, 0.5921569, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ot3o"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.9019608, 0.4509804, 0.29803923, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.83137256, 0.3647059, 0.22352941, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkp33"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.83137256, 0.3647059, 0.22352941, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.98039216, 0.59607846, 0.34901962, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[resource]
+Button/colors/font_color = Color(0.9843137, 0.99607843, 0.8745098, 1)
+Button/colors/font_focus_color = Color(0.9843137, 0.99607843, 0.8745098, 1)
+Button/colors/font_hover_color = Color(0.9843137, 0.99607843, 0.8745098, 1)
+Button/colors/font_hover_pressed_color = Color(0.98039216, 0.59607846, 0.34901962, 1)
+Button/colors/font_pressed_color = Color(0.99215686, 0.8627451, 0.5921569, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_tf5ee")
+Button/styles/focus = SubResource("StyleBoxFlat_tpbpl")
+Button/styles/hover = SubResource("StyleBoxFlat_xx24o")
+Button/styles/normal = SubResource("StyleBoxFlat_7ot3o")
+Button/styles/pressed = SubResource("StyleBoxFlat_tkp33")
+CustomMenuButton/base_type = &"Button"
+CustomMenuButton/font_sizes/font_size = 36

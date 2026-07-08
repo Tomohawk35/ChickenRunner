@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ccghfwhfqeydf"]
 
 [ext_resource type="Script" uid="uid://b8jppogi8mavb" path="res://main_scenes/main_menu/main_menu.gd" id="1_70phs"]
+[ext_resource type="Theme" uid="uid://b1sjlmnw4xnce" path="res://project_theme.tres" id="2_y8l6a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pq8uq"]
 font_size = 100
@@ -9,32 +10,6 @@ outline_size = 5
 outline_color = Color(0.86960465, 0.3289683, 0.77553135, 1)
 shadow_size = 13
 shadow_color = Color(1, 0, 0, 0.7764706)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70phs"]
-bg_color = Color(0, 0.7254902, 0.24313726, 0.827451)
-border_width_left = 20
-border_width_top = 15
-border_width_right = 20
-border_width_bottom = 15
-border_color = Color(0.8, 0.8, 0, 0.5764706)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egyqj"]
-bg_color = Color(0, 0.6, 1, 1)
-border_width_left = 20
-border_width_top = 15
-border_width_right = 20
-border_width_bottom = 15
-border_color = Color(0.8, 0.2509804, 0, 0.5764706)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8l6a"]
 bg_color = Color(0, 0.7254902, 0.24313726, 0.827451)
@@ -82,37 +57,34 @@ alignment = 1
 [node name="StartGameButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=1520385454]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_70phs")
-theme_override_styles/hover = SubResource("StyleBoxFlat_egyqj")
+theme = ExtResource("2_y8l6a")
+theme_type_variation = &"CustomMenuButton"
 text = "Start Game"
 
 [node name="OptionsButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=374200735]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_70phs")
-theme_override_styles/hover = SubResource("StyleBoxFlat_egyqj")
+theme = ExtResource("2_y8l6a")
+theme_type_variation = &"CustomMenuButton"
 text = "Options"
 
 [node name="CreditsButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=46686165]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_70phs")
-theme_override_styles/hover = SubResource("StyleBoxFlat_egyqj")
+theme = ExtResource("2_y8l6a")
+theme_type_variation = &"CustomMenuButton"
 text = "Credits"
 
 [node name="ExitButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=1938226035]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_70phs")
-theme_override_styles/hover = SubResource("StyleBoxFlat_egyqj")
+theme = ExtResource("2_y8l6a")
+theme_type_variation = &"CustomMenuButton"
 text = "Exit"
 
 [node name="CreditsPanel" type="PanelContainer" parent="." unique_id=455196220]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
