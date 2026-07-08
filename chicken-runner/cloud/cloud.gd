@@ -20,8 +20,8 @@ func _process(delta: float) -> void:
 
 func _on_shadow_zone_body_entered(body: Node2D) -> void:
 	if body is Chicken:
-		GameManager.cooling_ref()
+		PlayerManager.cooling_ref()
 
 func _on_shadow_zone_body_exited(body: Node2D) -> void:
 	if body is Chicken:
-		GameManager.cooling_unref()
+		PlayerManager.cooling_unref()

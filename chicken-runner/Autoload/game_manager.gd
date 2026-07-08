@@ -1,10 +1,7 @@
 extends Node
 
-#signal Hit
-signal heat_changed(value: float)
+#signal heat_changed(value: float)
 signal scene_loaded
-
-enum GameState { MAIN_MENU, PLAYING, GAME_OVER }
 
 const FADE_DURATION : float = 0.3
 const LAST_LEVEL : int = 1
@@ -13,10 +10,10 @@ const LOAD_SCREEN_MIN_DURATION : float = 3.0
 @onready var joke: Label = $CanvasLayer/joke
 
 var current_level : int = 0
-var heat_level : float = 0.0
-var _cooling_count : int = 0
-var is_cooling : bool:
-	get: return _cooling_count > 0
+#var heat_level : float = 0.0
+#var _cooling_count : int = 0
+#var is_cooling : bool:
+	#get: return _cooling_count > 0
 var jokes: Array[String] = [
 	# Dad chicken jokes
 	"Why did the chicken join a band? Because it had the drumsticks!",
@@ -26,7 +23,6 @@ var jokes: Array[String] = [
 	"Did you know? Chickens can remember over 100 different faces! They're smarter than you think.",
 	"Fun fact: A chicken's heart beats 300-400 times per minute - faster than a hummingbird!"
 ]
-#var _current_state: GameState
 var _game_scenes : Dictionary[String, String] = {
 	"main_menu": "uid://ccghfwhfqeydf",
 	"game_over": "uid://cilxyeywaty0j",
@@ -96,33 +92,33 @@ func change_scene(scene: String) -> void:
 func new_game() -> void:
 	_tree.paused = false
 	current_level = 1
-	heat_level = 0.0
+	#heat_level = 0.0
 	change_scene("level_" + str(current_level))
 
 func next_level() -> void:
 	if current_level == LAST_LEVEL:
 		change_scene("victory")
 	current_level += 1
-	heat_level = 0.0
+	#heat_level = 0.0
 	change_scene("level_" + str(current_level))
 
 func game_over() -> void:
 	change_scene("game_over")
 
-func increase_heat(value: float) -> void:
-	heat_level += value
-	heat_changed.emit(heat_level)
-	if heat_level >= 100:
-		game_over()
+#func increase_heat(value: float) -> void:
+	#heat_level += value
+	#heat_changed.emit(heat_level)
+	#if heat_level >= 100:
+		#game_over()
+#
+#func decrease_heat(value: float) -> void:
+	#heat_level -= value
+	#if heat_level < 0:
+		#heat_level = 0
+	#heat_changed.emit(heat_level)
 
-func decrease_heat(value: float) -> void:
-	heat_level -= value
-	if heat_level < 0:
-		heat_level = 0
-	heat_changed.emit(heat_level)
-
-func cooling_ref() -> void:
-	_cooling_count += 1
-
-func cooling_unref() -> void:
-	_cooling_count = maxi(_cooling_count - 1, 0)
+#func cooling_ref() -> void:
+	#_cooling_count += 1
+#
+#func cooling_unref() -> void:
+	#_cooling_count = maxi(_cooling_count - 1, 0)

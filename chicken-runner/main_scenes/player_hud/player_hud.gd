@@ -13,17 +13,17 @@ var _elapsed_time : float = 0.0
 func _ready() -> void:
 	pause_menu.hide()
 	pause.pressed.connect(_on_pause_button_pressed)
-	temperature_meter.value = GameManager.heat_level
-	GameManager.heat_changed.connect(_on_heat_changed)
+	temperature_meter.value = PlayerManager.heat_level
+	PlayerManager.heat_changed.connect(_on_heat_changed)
 
 func _process(delta: float) -> void:
 	_elapsed_time += delta
 	if _elapsed_time >= HEAT_GAIN_INTERVAL:
 		_elapsed_time = 0.0
-		if GameManager.is_cooling:
-			GameManager.decrease_heat(HEAT_GAIN_AMOUNT)
+		if PlayerManager.is_cooling:
+			PlayerManager.increase_heat(-HEAT_GAIN_AMOUNT)
 		else:
-			GameManager.increase_heat(HEAT_GAIN_AMOUNT)
+			PlayerManager.increase_heat(HEAT_GAIN_AMOUNT)
 
 
 

@@ -8,6 +8,7 @@ var speed : float = 300.0
 func _ready() -> void:
 	area_2d.body_entered.connect(_on_body_entered)
 	area_2d.area_entered.connect(_on_area_entered)
+	PlayerManager.reset_heat()
 
 func _physics_process(_delta: float) -> void:
 	var dir : Vector2 = _get_direction()
@@ -26,3 +27,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 func _get_direction() -> Vector2:
 	return Input.get_vector("left", "right", "up", "down")
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("use_consumable"):
+		PlayerManager.use_current_consumable()

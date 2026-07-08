@@ -11,7 +11,7 @@ var _point_2_color : Color
 
 func _ready() -> void:
 	_initialize_heat_distortion()
-	GameManager.heat_changed.connect(_on_heat_changed)
+	PlayerManager.heat_changed.connect(_on_heat_changed)
 
 
 func _initialize_heat_distortion() -> void:
