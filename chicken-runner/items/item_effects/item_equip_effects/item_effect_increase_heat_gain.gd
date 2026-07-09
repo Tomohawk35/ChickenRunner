@@ -4,8 +4,7 @@ class_name ItemEquipEffectIncreaseHeatGain
 @export var heat_gain : float = 1.0
 
 func activate() -> void:
-	pass
-	# Increase Heat gain by amount
+	PlayerManager.increase_heat_gain_rate(heat_gain)
 
 func deactivate() -> void:
-	pass
+	PlayerManager.increase_heat_gain_rate(-heat_gain)

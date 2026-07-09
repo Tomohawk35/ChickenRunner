@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bvj4u3smrfbcr"]
 
 [ext_resource type="Texture2D" uid="uid://cy4e6p2tab38e" path="res://assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="1_eef11"]
+[ext_resource type="Script" uid="uid://cia6sw1pqdq6m" path="res://level_1/level.gd" id="1_kwhby"]
 [ext_resource type="PackedScene" uid="uid://dyfc3e0yrrdkp" path="res://chicken/chicken.tscn" id="2_kw4bk"]
 [ext_resource type="PackedScene" uid="uid://btfy4nhytiw0l" path="res://level_1/spawner.tscn" id="3_u1mx0"]
 [ext_resource type="PackedScene" uid="uid://b3q2rxnjpunna" path="res://level_1/lane.tscn" id="4_u1mx0"]
@@ -504,6 +505,7 @@ sources/0 = SubResource("TileSetAtlasSource_10lpg")
 size = Vector2(1335, 56)
 
 [node name="Level1" type="Node2D" unique_id=2030443767]
+script = ExtResource("1_kwhby")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1763329312]
 position = Vector2(-1, -146)

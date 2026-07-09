@@ -2,6 +2,7 @@
 extends Node
 
 signal heat_changed(new_heat_level: float)
+signal heat_gain_rate_changed(new_heat_gain_rate: float)
 signal consumable_changed
 
 var consumable : Consumable = load("uid://c3nv13iw6iay3")
@@ -9,7 +10,11 @@ var power_ups : Array = []
 var selected_power_up : int = 0
 
 
-var heat_gain_rate : float = 2.0
+var heat_gain_rate : float = 0.0 : 
+	set(v):
+		heat_gain_rate = v
+		heat_gain_rate_changed.emit(heat_gain_rate)
+
 var heat_level : float = 0.0 : 
 	set(v):
 		heat_level = v
@@ -27,7 +32,7 @@ func increase_heat(value: float) -> void:
 	if heat_level >= 100.0:
 		GameManager.game_over()
 
-func increase_heat_gain(value: float) -> void:
+func increase_heat_gain_rate(value: float) -> void:
 	heat_gain_rate += value
 
 func pick_up_consumable(item: Consumable) -> void:
