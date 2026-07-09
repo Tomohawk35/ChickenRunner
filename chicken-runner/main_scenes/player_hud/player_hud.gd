@@ -16,6 +16,7 @@ func _ready() -> void:
 	temperature_meter.value = PlayerManager.heat_level
 	PlayerManager.heat_changed.connect(_on_heat_changed)
 
+# FIXME : May need to move this to the Chicken or Level script
 func _process(delta: float) -> void:
 	_elapsed_time += delta
 	if _elapsed_time >= HEAT_GAIN_INTERVAL:

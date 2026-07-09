@@ -7,6 +7,9 @@ signal consumable_changed
 var consumable : Consumable = load("uid://c3nv13iw6iay3")
 var power_ups : Array = []
 var selected_power_up : int = 0
+
+
+var heat_gain_rate : float = 2.0
 var heat_level : float = 0.0 : 
 	set(v):
 		heat_level = v
@@ -21,15 +24,11 @@ func reset_heat() -> void:
 	
 func increase_heat(value: float) -> void:
 	heat_level = clampf(heat_level + value, 0.0, 100.0)
-	#heat_changed.emit(heat_level)
 	if heat_level >= 100.0:
 		GameManager.game_over()
 
-#func decrease_heat(value: float) -> void:
-	#heat_level -= value
-	#if heat_level < 0:
-		#heat_level = 0
-	##heat_changed.emit(heat_level)
+func increase_heat_gain(value: float) -> void:
+	heat_gain_rate += value
 
 func pick_up_consumable(item: Consumable) -> void:
 	if !item:
