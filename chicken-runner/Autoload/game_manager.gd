@@ -19,9 +19,15 @@ var jokes: Array[String] = [
 	"Why did the chicken join a band? Because it had the drumsticks!",
 	"What do you call a chicken that crosses the road, rolls in the mud, and crosses back? A dirty double-crosser!",
 	"Why don't chickens wear pants? Because their peckers are on their faces!",
+	"How did the chicken with no legs cross the road? KFC bucket.",
+	"What day do chickens hate the most? Fry-day.",
+	
 	# Chicken facts
 	"Did you know? Chickens can remember over 100 different faces! They're smarter than you think.",
-	"Fun fact: A chicken's heart beats 300-400 times per minute - faster than a hummingbird!"
+	"Fun fact: A chicken's heart beats 300-400 times per minute - faster than a hummingbird!",
+	"Chickens have a complex form of communication with over 30 distinct vocalizations ",
+	"Chickens are descended from the red junglefowl of Southeast Asia, and they were first domesticated over 8,000 years ago",
+	"The longest recorded flight by a chicken is 13 seconds — not exactly an eagle, but hey, they try!"
 ]
 var _game_scenes : Dictionary[String, String] = {
 	"main_menu": "uid://ccghfwhfqeydf",
@@ -70,7 +76,7 @@ func change_scene(scene: String) -> void:
 	
 	_tree.paused = true
 	joke.text = jokes.pick_random()
-
+	joke.show()
 	
 	var start_time : int = Time.get_ticks_msec()
 
@@ -81,13 +87,13 @@ func change_scene(scene: String) -> void:
 	_root.add_child(_current_scene)
 	
 	var load_duration : int = Time.get_ticks_msec() - start_time
-	
+
 	await _tree.create_timer(clamp(LOAD_SCREEN_MIN_DURATION - (load_duration / 1000.0), 0.0, LOAD_SCREEN_MIN_DURATION)).timeout
-	
+	joke.hide()
 	await _fade_in().finished
 	scene_loaded.emit() # TODO: NEED TO LISTEN FOR SIGNAL BEFORE STARTING LEVELS
 	_tree.paused = false
-	#joke.hide()
+
 
 func new_game() -> void:
 	_tree.paused = false
