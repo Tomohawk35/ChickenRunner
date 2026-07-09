@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://kg3pn5n57imj"]
 
 [ext_resource type="Script" uid="uid://dtfinon4g5n0x" path="res://items/item_effects/item_equip_effect.gd" id="1_dxxes"]
-[ext_resource type="Script" uid="uid://jq1io3w1cnli" path="res://items/power_ups/power_up.gd" id="2_0bn66"]
+[ext_resource type="Script" uid="uid://jq1io3w1cnli" path="res://items/equipment/equipment.gd" id="2_0bn66"]
 [ext_resource type="Script" uid="uid://bc3j2ktlrfxxb" path="res://items/item_effects/item_equip_effects/item_effect_increase_heat_gain.gd" id="2_qoep0"]
 [ext_resource type="Texture2D" uid="uid://ndvcr65rfo6p" path="res://icon.svg" id="2_untvw"]
 [ext_resource type="Script" uid="uid://cu38kun1mporc" path="res://items/item_effects/item_use_effect.gd" id="4_dxxes"]
