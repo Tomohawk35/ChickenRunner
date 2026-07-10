@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://bsty1frcnps40"]
+
+[ext_resource type="Script" uid="uid://dtfinon4g5n0x" path="res://items/item_effects/item_equip_effect.gd" id="1_mqjk5"]
+[ext_resource type="Script" uid="uid://jq1io3w1cnli" path="res://items/equipment/equipment.gd" id="2_l1lgo"]
+[ext_resource type="Texture2D" uid="uid://ndvcr65rfo6p" path="res://icon.svg" id="2_pmo6x"]
+[ext_resource type="Script" uid="uid://cu38kun1mporc" path="res://items/item_effects/item_use_effect.gd" id="3_pmo6x"]
+[ext_resource type="Script" uid="uid://dnye17kfulmq1" path="res://items/item_effects/item_use_effects/item_use_effect_fire_projectile.gd" id="5_pmo6x"]
+
+[sub_resource type="Resource" id="Resource_6aa83"]
+script = ExtResource("5_pmo6x")
+metadata/_custom_type_script = "uid://dnye17kfulmq1"
+
+[resource]
+script = ExtResource("2_l1lgo")
+equipment_name = "Headband"
+description = "Found in a dumpster behind a strip mall dojo. Channel your inner karate kid to destroy objects in front of you."
+icon = ExtResource("2_pmo6x")
+use_effects = Array[ExtResource("3_pmo6x")]([SubResource("Resource_6aa83")])
+metadata/_custom_type_script = "uid://jq1io3w1cnli"
