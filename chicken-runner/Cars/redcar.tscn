@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c78a1"]
 size = Vector2(21.428583, 16.428577)
 
-[node name="redcar" type="CharacterBody2D" unique_id=1423788077 node_paths=PackedStringArray("sprite")]
+[node name="redcar" type="CharacterBody2D" unique_id=1423788077 node_paths=PackedStringArray("sprite") groups=["moving_objects"]]
 scale = Vector2(1.4, 1.4)
 collision_mask = 2
 script = ExtResource("1_uijal")
