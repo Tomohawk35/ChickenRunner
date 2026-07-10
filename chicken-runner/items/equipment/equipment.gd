@@ -20,4 +20,4 @@ func unequip() -> void:
 
 func use() -> void:
 	for effect in use_effects:
-		effect.activate()
+		effect.use()
