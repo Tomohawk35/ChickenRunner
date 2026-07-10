@@ -6,8 +6,8 @@ signal heat_gain_rate_changed(new_heat_gain_rate: float)
 signal consumable_changed
 
 var consumable : Consumable = load("uid://c3nv13iw6iay3")
-var power_ups : Array = []
-var selected_power_up : int = 0
+var equipment : Array[Equipment] = [load("uid://bsty1frcnps40")]
+var selected_equipment : int = 0
 
 
 var heat_gain_rate : float = 0.0 : 
@@ -23,6 +23,7 @@ var heat_level : float = 0.0 :
 var _cooling_count : int = 0
 var is_cooling : bool:
 	get: return _cooling_count > 0
+
 
 func reset_heat() -> void:
 	heat_level = 0.0
@@ -49,6 +50,9 @@ func use_current_consumable() -> void:
 		consumable.consume()
 		consumable = null
 
+func use_equipment() -> void:
+	if equipment[selected_equipment]:
+		equipment[selected_equipment].use()
 
 func cooling_ref() -> void:
 	_cooling_count += 1
