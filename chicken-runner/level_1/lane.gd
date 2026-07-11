@@ -29,6 +29,6 @@ func spawn_object() -> void:
 	var final_speed = obj.speed + randf_range(-_speed_randomness, _speed_randomness)
 	obj.set_speed(final_speed)
 	add_child(obj)
-	#obj.global_position = global_position
+	obj.global_position = global_position
 	
 	

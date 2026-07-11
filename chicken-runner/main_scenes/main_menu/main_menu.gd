@@ -35,7 +35,7 @@ func _on_start_game_button_pressed() -> void:
 
 func _on_options_button_pressed() -> void:
 	AudioManager.play_button_click_sound()
-	pass
+	GameManager.change_scene("options")
 
 func _on_credits_button_pressed() -> void:
 	AudioManager.play_button_click_sound()

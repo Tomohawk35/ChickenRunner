@@ -10,32 +10,6 @@ outline_color = Color(0.12120066, 0.038661536, 0.0016563355, 1)
 shadow_size = 13
 shadow_color = Color(0.15064436, 0.052732714, 0.076602586, 0.7764706)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdsm2"]
-bg_color = Color(0, 0.7254902, 0.24313726, 0.827451)
-border_width_left = 20
-border_width_top = 15
-border_width_right = 20
-border_width_bottom = 15
-border_color = Color(0.8, 0.8, 0, 0.5764706)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvabi"]
-bg_color = Color(0, 0.6, 1, 1)
-border_width_left = 20
-border_width_top = 15
-border_width_right = 20
-border_width_bottom = 15
-border_color = Color(0.8, 0.2509804, 0, 0.5764706)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-corner_detail = 1
-
 [node name="VictoryScreen" type="Control" unique_id=1517767923]
 layout_mode = 3
 anchors_preset = 15
@@ -75,14 +49,10 @@ size_flags_vertical = 4
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_mdsm2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qvabi")
 text = "Return to Menu"
 
 [node name="ExitButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=267010922]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_mdsm2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qvabi")
 text = "Exit Game"

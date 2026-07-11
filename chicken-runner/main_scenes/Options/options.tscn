@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://c040d24e1b1vi"]
+
+[ext_resource type="Script" uid="uid://lc27a5f4drvn" path="res://main_scenes/Options/options.gd" id="1_sce6r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sce6r"]
+font_size = 100
+font_color = Color(0.70509714, 0.68692124, 0.09083664, 1)
+outline_size = 5
+outline_color = Color(0.12120066, 0.038661536, 0.0016563355, 1)
+shadow_size = 13
+shadow_color = Color(0.15064436, 0.052732714, 0.076602586, 0.7764706)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_y8l6a"]
+thickness = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_66kjr"]
+font_size = 30
+font_color = Color(0.4627451, 0.95686275, 0.6, 1)
+outline_size = 5
+outline_color = Color(0.12120066, 0.038661536, 0.0016563355, 1)
+shadow_size = 13
+shadow_color = Color(0.15064436, 0.052732714, 0.076602586, 0.7764706)
+
+[sub_resource type="LabelSettings" id="LabelSettings_44juv"]
+font_size = 30
+font_color = Color(0.4627451, 0.95686275, 0.6, 1)
+outline_size = 5
+outline_color = Color(0.12120066, 0.038661536, 0.0016563355, 1)
+shadow_size = 13
+shadow_color = Color(0.15064436, 0.052732714, 0.076602586, 0.7764706)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rpf8t"]
+font_size = 30
+font_color = Color(0.4627451, 0.95686275, 0.6, 1)
+outline_size = 5
+outline_color = Color(0.12120066, 0.038661536, 0.0016563355, 1)
+shadow_size = 13
+shadow_color = Color(0.15064436, 0.052732714, 0.076602586, 0.7764706)
+
+[node name="Options" type="Control" unique_id=941080207]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sce6r")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1887990896]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PanelContainer" unique_id=135249096]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/Panel" unique_id=365873780]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7426214, 0.50295657, 0.19863573, 0.6039216)
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Panel" unique_id=1053805784]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = -15.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Panel/MarginContainer" unique_id=6778425]
+layout_mode = 2
+
+[node name="Ttile" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer" unique_id=1762998334]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Contols"
+label_settings = SubResource("LabelSettings_sce6r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/Panel/MarginContainer/VBoxContainer" unique_id=1929114755]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_y8l6a")
+
+[node name="Movement" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer" unique_id=949541423]
+layout_mode = 2
+text = "Movement: 
+UP - W 
+Left - A
+Down - S
+Right -  D"
+label_settings = SubResource("LabelSettings_66kjr")
+horizontal_alignment = 1
+
+[node name="pause" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer" unique_id=2078416712]
+layout_mode = 2
+size_flags_vertical = 6
+text = "pause - Esc"
+label_settings = SubResource("LabelSettings_44juv")
+horizontal_alignment = 1
+
+[node name="Abilities" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer" unique_id=1873468050]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Abilities:
+Use_consumable - E
+Use_power_up - F
+Toggle_power_up - Q
+Use_equipment - Q"
+label_settings = SubResource("LabelSettings_rpf8t")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer" unique_id=623146721]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="." unique_id=510890556]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -138.0
+offset_bottom = 71.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "Back"
