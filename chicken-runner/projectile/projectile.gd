@@ -15,6 +15,9 @@ func _on_body_entered(body: Node2D) -> void:
 		body.queue_free() # FIXME : Move to moving object script to incorporate a destroy effect
 		queue_free()
 
+#func set_position(pos: Vector2) -> void:
+	#global_position = pos
+
 func set_velocity(speed: float, dir: Vector2) -> void:
 	_velocity = speed * dir
 	_set_projectile_direction(dir)
