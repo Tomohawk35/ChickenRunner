@@ -13,6 +13,7 @@ func spawn_projectile(type: ProjType, speed: float, dir: Vector2) -> bool:
 		return false
 	
 	var proj_inst : Projectile = load(PROJECTILE_SCENES[type]).instantiate()
+	proj_inst.global_position = player.global_position
 	proj_inst.set_velocity(speed, dir)
-	player.add_child(proj_inst) # TODO: Make a child of the level node or root node. 
+	add_child(proj_inst) 
 	return true
