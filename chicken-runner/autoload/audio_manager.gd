@@ -3,9 +3,9 @@ extends Node
 
 ## SFX
 const CHICKEN_SFX_UI_BEEPS_ACTIVATE : AudioStreamWAV = preload("uid://smmmbuk7becd")
-const CHICKEN_SFX_UI_BEEPS : AudioStreamWAV = preload("uid://mb6elb3vlre7")
 const CHICKEN_SFX_UI_BEEP_1 : AudioStreamWAV = preload("uid://djix8s06erfaa")
 const CHICKEN_SFX_GETTING_HIT_IMPACT : AudioStreamWAV = preload("uid://dtslptl8ip8s1")
+
 
 ## MUSIC
 const PROJECT_76_3 : AudioStreamMP3 = preload("uid://be5eusl3scf52") # TODO: Replace with WAV file

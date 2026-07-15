@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ceq306wayysht"]
 
-[ext_resource type="Script" uid="uid://c4g0yf44g8boo" path="res://autoload/audio_manager.gd" id="1_mf8l3"]
-[ext_resource type="AudioStream" uid="uid://djix8s06erfaa" path="res://assets/sfx/CHICKEN SFX UI BEEP 1.wav" id="2_5aqdv"]
+[ext_resource type="Script" uid="uid://c4g0yf44g8boo" path="res://Autoload/audio_manager.gd" id="1_mf8l3"]
+[ext_resource type="AudioStream" uid="uid://4d08cayikx7n" path="res://assets/sfx/CHICKEN SFX 1 COCKLEDOODLEDOO.mp3" id="2_rl3vi"]
 
 [node name="AudioManager" type="Node" unique_id=1474964700]
 process_mode = 3
@@ -9,7 +9,7 @@ script = ExtResource("1_mf8l3")
 
 [node name="SoundEffectsPlayer" type="AudioStreamPlayer" parent="." unique_id=505457635]
 unique_name_in_owner = true
-stream = ExtResource("2_5aqdv")
+stream = ExtResource("2_rl3vi")
 max_polyphony = 4
 bus = &"SFX"
 

@@ -2,7 +2,6 @@ extends Control
 class_name MainMenu
 
 const CHICKEN_SFX_UI_BEEPS_ACTIVATE : AudioStreamWAV = preload("uid://smmmbuk7becd")
-const CHICKEN_SFX_UI_BEEPS : AudioStreamWAV = preload("uid://mb6elb3vlre7")
 const CHICKEN_SFX_UI_BEEP_1 = preload("uid://djix8s06erfaa")
 
 @onready var start_game_button: Button = %StartGameButton
