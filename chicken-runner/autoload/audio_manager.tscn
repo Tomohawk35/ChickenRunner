@@ -11,6 +11,7 @@ script = ExtResource("1_mf8l3")
 unique_name_in_owner = true
 stream = ExtResource("2_5aqdv")
 max_polyphony = 4
+bus = &"SFX"
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1433123115]
 unique_name_in_owner = true

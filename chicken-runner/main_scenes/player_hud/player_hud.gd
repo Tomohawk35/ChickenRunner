@@ -4,13 +4,20 @@ extends CanvasLayer
 @onready var level_label: Label = %LevelLabel
 @onready var pause_menu: Control = $Pause_menu
 @onready var pause: Button = $Pause
+@onready var instructions: Control = $Instructions
 
 func _ready() -> void:
 	pause_menu.hide()
+	instructions.hide()
 	pause.pressed.connect(_on_pause_button_pressed)
 	pause.mouse_entered.connect(_on_button_hover)
 	temperature_meter.value = PlayerManager.heat_level
 	PlayerManager.heat_changed.connect(_on_heat_changed)
+	GameManager.scene_loaded.connect(_on_scene_loaded)
+
+func _on_scene_loaded() -> void:
+	await get_tree().process_frame
+	instructions.open()
 
 func _on_heat_changed(value: float) -> void:
 	temperature_meter.set_value_no_signal(value)

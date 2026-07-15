@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c5ndpe7hmiifm" path="res://main_scenes/player_hud/player_hud.gd" id="1_4mxvl"]
 [ext_resource type="PackedScene" uid="uid://3ry0ewvq5rax" path="res://main_scenes/player_hud/heat_distortion/heat_distortion.tscn" id="2_rdpnl"]
 [ext_resource type="PackedScene" uid="uid://ck5y5co86o7vp" path="res://main_scenes/pause_menu/pause_menu.tscn" id="3_fecom"]
+[ext_resource type="PackedScene" uid="uid://buo2lb6fbi7a1" path="res://main_scenes/Options/Instructions.tscn" id="4_inst"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtt68"]
 bg_color = Color(0.8663629, 0.48540246, 0.27041382, 1)
@@ -59,6 +60,9 @@ text = "Pause"
 [node name="Pause_menu" parent="." unique_id=176501694 instance=ExtResource("3_fecom")]
 visible = false
 pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Instructions" parent="." instance=ExtResource("4_inst")]
+visible = false
 
 [node name="ItemHotBar" type="Control" parent="." unique_id=431488489]
 layout_mode = 3
