@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dpbn4keighmr5"
+path="res://.godot/imported/CHICKEN SFX POWER UP.mp3-d6c2cd04c814eef1f0a238b2912d8770.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/CHICKEN SFX POWER UP.mp3"
+dest_files=["res://.godot/imported/CHICKEN SFX POWER UP.mp3-d6c2cd04c814eef1f0a238b2912d8770.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
