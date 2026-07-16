@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dkqn72bc82dwo"]
+
+[ext_resource type="Texture2D" uid="uid://bott03by4hgbk" path="res://assets/crusenho_ui_essentials/Sprites/UI_Flat_FrameSlot02b.png" id="1_73mo0"]
+[ext_resource type="Script" uid="uid://cudfqapcq1asv" path="res://main_scenes/player_hud/consumable_slot_ui.gd" id="2_73mo0"]
+[ext_resource type="Texture2D" uid="uid://bwjfxlrxho8bu" path="res://assets/kyrise_rpg_icon_pack/16x16/sword_02b.png" id="3_fkyhp"]
+
+[node name="ConsumableSlotUI" type="TextureRect" unique_id=733859513]
+size_flags_horizontal = 0
+texture = ExtResource("1_73mo0")
+script = ExtResource("2_73mo0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1059997122]
+position = Vector2(16, 16)
+texture = ExtResource("3_fkyhp")

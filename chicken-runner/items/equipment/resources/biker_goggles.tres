@@ -3,17 +3,18 @@
 [ext_resource type="Script" uid="uid://dtfinon4g5n0x" path="res://items/item_effects/item_equip_effect.gd" id="1_mq1gq"]
 [ext_resource type="Script" uid="uid://jq1io3w1cnli" path="res://items/equipment/equipment.gd" id="2_jfrhb"]
 [ext_resource type="Script" uid="uid://ca1www3gwjfm0" path="res://items/item_effects/item_equip_effects/item_equip_effect_increase_move_speed.gd" id="2_o6qt4"]
-[ext_resource type="Texture2D" uid="uid://ndvcr65rfo6p" path="res://icon.svg" id="3_aiuyn"]
+[ext_resource type="Texture2D" uid="uid://dj1xokkpgln1v" path="res://assets/kyrise_rpg_icon_pack/16x16/scroll_01c.png" id="3_aiuyn"]
 [ext_resource type="Script" uid="uid://cu38kun1mporc" path="res://items/item_effects/item_use_effect.gd" id="3_o6qt4"]
 
 [sub_resource type="Resource" id="Resource_7xclw"]
 script = ExtResource("2_o6qt4")
+speed_boost = 200.0
 metadata/_custom_type_script = "uid://ca1www3gwjfm0"
 
 [resource]
 script = ExtResource("2_jfrhb")
-equipment_name = "Biker Goggles"
-description = "They feel as if they make you faster when you wear them. You certainly look cooler with them."
-icon = ExtResource("3_aiuyn")
 equip_effects = Array[ExtResource("1_mq1gq")]([SubResource("Resource_7xclw")])
+item_name = "Speed Scroll"
+description = "Makes you run faster, or at least that is what the gift shop owner said."
+icon = ExtResource("3_aiuyn")
 metadata/_custom_type_script = "uid://jq1io3w1cnli"

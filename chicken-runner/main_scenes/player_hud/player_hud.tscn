@@ -3,7 +3,13 @@
 [ext_resource type="Script" uid="uid://c5ndpe7hmiifm" path="res://main_scenes/player_hud/player_hud.gd" id="1_4mxvl"]
 [ext_resource type="PackedScene" uid="uid://3ry0ewvq5rax" path="res://main_scenes/player_hud/heat_distortion/heat_distortion.tscn" id="2_rdpnl"]
 [ext_resource type="PackedScene" uid="uid://ck5y5co86o7vp" path="res://main_scenes/pause_menu/pause_menu.tscn" id="3_fecom"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://buo2lb6fbi7a1" path="res://main_scenes/Options/Instructions.tscn" id="4_inst"]
+=======
+[ext_resource type="PackedScene" uid="uid://dik0sf86ackw2" path="res://main_scenes/player_hud/equipment_slot_ui.tscn" id="4_mda12"]
+[ext_resource type="PackedScene" uid="uid://dkqn72bc82dwo" path="res://main_scenes/player_hud/consumable_slot_ui.tscn" id="4_mhd18"]
+[ext_resource type="PackedScene" uid="uid://bhbl5cp5t8clj" path="res://main_scenes/player_hud/level_complete_screen.tscn" id="6_8li8t"]
+>>>>>>> Stashed changes
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtt68"]
 bg_color = Color(0.8663629, 0.48540246, 0.27041382, 1)
@@ -57,6 +63,7 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 20
 text = "Pause"
 
+<<<<<<< Updated upstream
 [node name="Pause_menu" parent="." unique_id=176501694 instance=ExtResource("3_fecom")]
 visible = false
 pivot_offset_ratio = Vector2(0.5, 0.5)
@@ -64,11 +71,52 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 [node name="Instructions" parent="." instance=ExtResource("4_inst")]
 visible = false
 
+=======
+>>>>>>> Stashed changes
 [node name="ItemHotBar" type="Control" parent="." unique_id=431488489]
 layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ItemHotBar" unique_id=1013093776]
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemHotBar/MarginContainer" unique_id=1920610466]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="ConsumableSlotUI" parent="ItemHotBar/MarginContainer/VBoxContainer" unique_id=733859513 instance=ExtResource("4_mhd18")]
+layout_mode = 2
+
+[node name="EquipmentSlotContainer" type="HBoxContainer" parent="ItemHotBar/MarginContainer/VBoxContainer" unique_id=1237207548]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="EquipmentSlotUI" parent="ItemHotBar/MarginContainer/VBoxContainer/EquipmentSlotContainer" unique_id=583589618 instance=ExtResource("4_mda12")]
+layout_mode = 2
+
+[node name="EquipmentSlotUI2" parent="ItemHotBar/MarginContainer/VBoxContainer/EquipmentSlotContainer" unique_id=2013149620 instance=ExtResource("4_mda12")]
+layout_mode = 2
+slot = 1
+
+[node name="EquipmentSlotUI3" parent="ItemHotBar/MarginContainer/VBoxContainer/EquipmentSlotContainer" unique_id=1364943719 instance=ExtResource("4_mda12")]
+layout_mode = 2
+slot = 2
+
+[node name="PauseMenu" parent="." unique_id=176501694 instance=ExtResource("3_fecom")]
+visible = false
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="LevelCompleteScreen" parent="." unique_id=1636753090 instance=ExtResource("6_8li8t")]
+unique_name_in_owner = true

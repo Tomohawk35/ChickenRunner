@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://hrcwocxltfy"]
+
+[ext_resource type="Texture2D" uid="uid://pdbpgcbyemid" path="res://assets/crusenho_ui_essentials/Sprites/UI_Flat_Frame01a.png" id="1_m6mse"]
+[ext_resource type="Script" uid="uid://c75vk8ba4e5yb" path="res://main_scenes/player_hud/reward_panel.gd" id="2_qlf0u"]
+[ext_resource type="Texture2D" uid="uid://cvcmsv5ibq1gt" path="res://assets/roleymoth_fastfood_icons/soda4_2x.png" id="3_afx2d"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3cpwj"]
+texture = ExtResource("1_m6mse")
+texture_margin_left = 3.0
+texture_margin_top = 5.0
+texture_margin_right = 3.0
+texture_margin_bottom = 5.0
+
+[node name="RewardPanel" type="PanelContainer" unique_id=534770540 node_paths=PackedStringArray("name_label", "texture_rect", "item_type_label", "description_label")]
+process_mode = 3
+offset_right = 96.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_3cpwj")
+script = ExtResource("2_qlf0u")
+name_label = NodePath("MarginContainer/VBoxContainer/NameLabel")
+texture_rect = NodePath("MarginContainer/VBoxContainer/TextureRect")
+item_type_label = NodePath("MarginContainer/VBoxContainer/ItemTypeLabel")
+description_label = NodePath("MarginContainer/VBoxContainer/DescriptionLabel")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1243104261]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1055349875]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1103689180]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07123137, 0.07123139, 0.07123137, 1)
+text = "Item Name"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1059910575]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1092813435]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_afx2d")
+stretch_mode = 4
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=300037657]
+layout_mode = 2
+
+[node name="ItemTypeLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=742519139]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.096204735, 0.09620475, 0.096204735, 1)
+text = "Consumable"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=336050451]
+layout_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1891596663]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.096204735, 0.09620475, 0.096204735, 1)
+text = "A generic description of the item. "
+horizontal_alignment = 1
+autowrap_mode = 2

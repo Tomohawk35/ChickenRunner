@@ -1,8 +1,7 @@
-extends Resource
+extends Item
 class_name Consumable
 
-@export var item_name : String = "New Consumable"
-@export var sprite : Texture2D
+
 @export var effects : Array[ItemUseEffect] = []
 
 func consume() -> void:

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cu38kun1mporc" path="res://items/item_effects/item_use_effect.gd" id="1_f8b5d"]
 [ext_resource type="Script" uid="uid://cmva7t1wtmvp8" path="res://items/item_effects/item_use_effects/item_use_effect_heal.gd" id="2_mjsv8"]
 [ext_resource type="Script" uid="uid://bny0sgrk0gl4d" path="res://items/consumables/consumable.gd" id="2_qjei3"]
-[ext_resource type="Texture2D" uid="uid://ndvcr65rfo6p" path="res://icon.svg" id="4_hm435"]
+[ext_resource type="Texture2D" uid="uid://cvcmsv5ibq1gt" path="res://assets/roleymoth_fastfood_icons/soda4_2x.png" id="4_mjsv8"]
 
 [sub_resource type="Resource" id="Resource_f8b5d"]
 script = ExtResource("2_mjsv8")
@@ -11,7 +11,8 @@ metadata/_custom_type_script = "uid://cmva7t1wtmvp8"
 
 [resource]
 script = ExtResource("2_qjei3")
-item_name = "Pina Colada"
-sprite = ExtResource("4_hm435")
 effects = Array[ExtResource("1_f8b5d")]([SubResource("Resource_f8b5d")])
+item_name = "Pina Colada"
+description = "A refreshing drink to cool you down."
+icon = ExtResource("4_mjsv8")
 metadata/_custom_type_script = "uid://bny0sgrk0gl4d"

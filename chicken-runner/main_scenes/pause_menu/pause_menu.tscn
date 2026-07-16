@@ -10,7 +10,7 @@ outline_color = Color(0.86960465, 0.3289683, 0.77553135, 1)
 shadow_size = 13
 shadow_color = Color(1, 0, 0, 0.7764706)
 
-[node name="Pause_menu" type="Control" unique_id=176501694]
+[node name="PauseMenu" type="Control" unique_id=176501694]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15

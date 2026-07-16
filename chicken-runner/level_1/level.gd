@@ -5,12 +5,16 @@ const HEAT_GAIN_INTERVAL : float = 1.0
 
 @export var base_heat_gain_rate : float = 2.0
 
+@onready var chicken: Chicken = $Chicken
+@onready var player_hud: CanvasLayer = $PlayerHud
+
 var _heat_gain_rate : float
 var _elapsed_time : float = 0.0
 
 func _ready() -> void:
 	_calculate_heat_gain(PlayerManager.heat_gain_rate)
 	PlayerManager.heat_gain_rate_changed.connect(_on_heat_gain_rate_changed)
+	chicken.completion_zone_entered.connect(_on_completion_zone_entered)
 
 func _process(delta: float) -> void:
 	_elapsed_time += delta
@@ -26,3 +30,6 @@ func _on_heat_gain_rate_changed(new_heat_gain_rate: float) -> void:
 
 func _calculate_heat_gain(player_heat_gain_modifier: float) -> void:
 	_heat_gain_rate = base_heat_gain_rate + player_heat_gain_modifier
+
+func _on_completion_zone_entered() -> void:
+	player_hud.show_reward_scene()

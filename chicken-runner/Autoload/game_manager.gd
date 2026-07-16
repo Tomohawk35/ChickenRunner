@@ -4,16 +4,17 @@ extends Node
 signal scene_loaded
 
 const FADE_DURATION : float = 0.3
-const LAST_LEVEL : int = 1
+const LAST_LEVEL : int = 3
 const LOAD_SCREEN_MIN_DURATION : float = 3.0
+const CONSUMABLES_PATH : String = "res://items/consumables/resources/"
+const EQUIPMENT_PATH : String = "res://items/equipment/resources/"
 
 @onready var joke: Label = $CanvasLayer/joke
 
 var current_level : int = 0
-#var heat_level : float = 0.0
-#var _cooling_count : int = 0
-#var is_cooling : bool:
-	#get: return _cooling_count > 0
+var consumables : Array[Consumable] = []
+var equipment : Array[Equipment] = []
+
 var jokes: Array[String] = [
 	# Dad chicken jokes
 	"Why did the chicken join a band? Because it had the drumsticks!",
@@ -33,6 +34,8 @@ var _game_scenes : Dictionary[String, String] = {
 	"main_menu": "uid://ccghfwhfqeydf",
 	"game_over": "uid://cilxyeywaty0j",
 	"level_1": "uid://bvj4u3smrfbcr",
+	"level_2": "uid://bvj4u3smrfbcr",
+	"level_3": "uid://bvj4u3smrfbcr",
 	"victory": "uid://dqt2r7qcy7pcn",
 	"options":"uid://c040d24e1b1vi"
 }
@@ -47,7 +50,8 @@ func _ready() -> void:
 		#change_scene("level_01")
 	#Hit.connect(_on_hit)
 	#joke.hide()
-	pass
+	_load_resources_from_folder(CONSUMABLES_PATH, consumables)
+	_load_resources_from_folder(EQUIPMENT_PATH, equipment)
 
 func _fade_out() -> Tween:
 	var tween : Tween = create_tween()
@@ -65,6 +69,24 @@ func _fade_in() -> Tween:
 	tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	return tween
 
+func _load_resources_from_folder(path: String, target_array: Array) -> void:
+	for file in DirAccess.get_files_at(path):
+		target_array.append(load_asset(path + file))
+
+static func load_asset(path: String) -> Resource:
+	if OS.has_feature("export"):
+		if not path.ends_with(".remap"):
+			return load(path)
+		
+		var __config_file = ConfigFile.new()
+		__config_file.load(path)
+		
+		# Load the remapped file
+		var __remapped_file_path = __config_file.get_value("remap", "path")
+		__config_file = null
+		return load(__remapped_file_path)
+	else:
+		return load(path)
 
 func _load_scene_resource(path: Variant) -> Resource:
 	if path is PackedScene:
@@ -95,6 +117,11 @@ func change_scene(scene: String) -> void:
 	scene_loaded.emit() # TODO: NEED TO LISTEN FOR SIGNAL BEFORE STARTING LEVELS
 	_tree.paused = false
 
+func get_random_consumable() -> Consumable:
+	return consumables.pick_random()
+
+func get_random_equipment() -> Equipment:
+	return equipment.pick_random()
 
 func new_game() -> void:
 	_tree.paused = false
