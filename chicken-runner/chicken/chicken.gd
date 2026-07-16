@@ -13,7 +13,7 @@ func _ready() -> void:
 	area_2d.body_entered.connect(_on_body_entered)
 	area_2d.area_entered.connect(_on_area_entered)
 	PlayerManager.reset_heat()
-	_update_speed(0.0)
+	_update_speed(PlayerManager.move_speed)
 	PlayerManager.move_speed_changed.connect(_update_speed)
 
 func _physics_process(_delta: float) -> void:
