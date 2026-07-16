@@ -40,7 +40,7 @@ func _input(event: InputEvent) -> void:
 		PlayerManager.use_current_consumable()
 	elif event.is_action_pressed("use_equipment"):
 		PlayerManager.use_equipment()
-	elif event.is_action_pressed("toggle_power_up"):
+	elif event.is_action_pressed("toggle_equipment"):
 		PlayerManager.switch_equipment()
 
 func _update_speed(s: float) -> void:
