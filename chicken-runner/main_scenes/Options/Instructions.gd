@@ -14,8 +14,8 @@ func _populate() -> void:
 	movement.text = "[center][b][color=gold][font_size=24] MOVEMENT CONTROLS[/font_size][/color][/b][/center]\n\nUp\t-\t%s\nLeft\t-\t%s\nDown\t-\t%s\nRight\t-\t%s" % [
 		_key_for("up"), _key_for("left"), _key_for("down"), _key_for("right")
 	]
-	abilities.text = "[center][b][color=gold][font_size=24]Abilities[/font_size][/color][/b][/center]\n\nUse Consumable\t-\t%s\nUse Equipment\t-\t%s\nToggle Equipment\t-\t%s" % [
-		_key_for("use_consumable"), _key_for("use_equipment"), _key_for("toggle_equipment")
+	abilities.text = "[center][b][color=gold][font_size=24]Abilities[/font_size][/color][/b][/center]\n\nUse Consumable\t-\t%s\nToggle Equipment\t-\t%s\nUse Equipment\t-\t%s\nClick (Mouse)\t-\tSelect powerup" % [
+		_key_for("use_consumable"), _key_for("toggle_equipment"), _key_for("use_equipment")
 	]
 	pause_label.text = "Pause - %s" % _key_for("escape")
 

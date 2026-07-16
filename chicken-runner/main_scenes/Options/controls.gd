@@ -6,9 +6,9 @@ extends PanelContainer
 	"down": %DownButton,
 	"right": %RightButton,
 	"use_consumable": %ConsumableButton,
-	"use_power_up": %PowerUpButton,
-	"toggle_power_up": %TogglePowerUpButton,
+	"toggle_equipment": %ToggleEquipmentButton,
 	"use_equipment": %EquipmentButton,
+	"click": %ClickButton,
 }
 
 var _remap_action: String = ""

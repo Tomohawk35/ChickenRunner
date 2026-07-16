@@ -135,11 +135,10 @@ tab_1/title = "Controls"
 
 [node name="Sound" parent="Options/Panel/MarginContainer/VBoxContainer/TabBar" unique_id=947446182 instance=ExtResource("2_66kjr")]
 layout_mode = 1
-offset_left = -345.0
-offset_top = -1.0
-offset_right = 451.0
-offset_bottom = 423.0
-script = null
+offset_left = -334.0
+offset_top = 78.0
+offset_right = 342.0
+offset_bottom = 523.0
 
 [node name="Controls" parent="Options/Panel/MarginContainer/VBoxContainer/TabBar" unique_id=951515874 instance=ExtResource("3_rpf8t")]
 layout_mode = 1

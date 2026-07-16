@@ -142,28 +142,28 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "..."
 
-[node name="PowerUpLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=288637936]
+[node name="ClickLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=288637936]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 20
-text = "Use Power Up"
+text = "Click"
 vertical_alignment = 1
 
-[node name="PowerUpButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=325346135]
+[node name="ClickButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=325346135]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "..."
 
-[node name="TogglePowerUpLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=1103632230]
+[node name="ToggleEquipmentLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=1103632230]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 20
-text = "Toggle Power Up"
+text = "Toggle Equipment"
 vertical_alignment = 1
 
-[node name="TogglePowerUpButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=1423949203]
+[node name="ToggleEquipmentButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=1423949203]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
