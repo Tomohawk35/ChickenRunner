@@ -28,8 +28,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is CompletionZone:
-		#print("Completion Zone reached!")
-		#GameManager.change_scene("victory")
 		completion_zone_entered.emit()
 
 func _get_direction() -> Vector2:

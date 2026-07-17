@@ -1,6 +1,5 @@
 extends Node
 
-#signal heat_changed(value: float)
 signal scene_loaded
 
 const FADE_DURATION : float = 0.3
@@ -46,10 +45,6 @@ var _game_scenes : Dictionary[String, String] = {
 @onready var color_rect: ColorRect = $CanvasLayer/ColorRect
 
 func _ready() -> void:
-	#if OS.is_debug_build():
-		#change_scene("level_01")
-	#Hit.connect(_on_hit)
-	#joke.hide()
 	_load_resources_from_folder(CONSUMABLES_PATH, consumables)
 	_load_resources_from_folder(EQUIPMENT_PATH, equipment)
 
@@ -126,33 +121,13 @@ func get_random_equipment() -> Equipment:
 func new_game() -> void:
 	_tree.paused = false
 	current_level = 1
-	#heat_level = 0.0
 	change_scene("level_" + str(current_level))
 
 func next_level() -> void:
 	if current_level == LAST_LEVEL:
 		change_scene("victory")
 	current_level += 1
-	#heat_level = 0.0
 	change_scene("level_" + str(current_level))
 
 func game_over() -> void:
 	change_scene("game_over")
-
-#func increase_heat(value: float) -> void:
-	#heat_level += value
-	#heat_changed.emit(heat_level)
-	#if heat_level >= 100:
-		#game_over()
-#
-#func decrease_heat(value: float) -> void:
-	#heat_level -= value
-	#if heat_level < 0:
-		#heat_level = 0
-	#heat_changed.emit(heat_level)
-
-#func cooling_ref() -> void:
-	#_cooling_count += 1
-#
-#func cooling_unref() -> void:
-	#_cooling_count = maxi(_cooling_count - 1, 0)
