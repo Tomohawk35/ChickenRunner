@@ -1,14 +1,11 @@
 [gd_scene format=3 uid="uid://ca5oy0v1raa6w"]
 
-[ext_resource type="Script" uid="uid://cjv6rbo04veej" path="res://autoload/game_manager.gd" id="1_1shkg"]
+[ext_resource type="Script" uid="uid://cjv6rbo04veej" path="res://Autoload/game_manager.gd" id="1_1shkg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1shkg"]
 font_size = 45
-font_color = Color(1, 0.50980395, 0, 1)
 outline_size = 5
-outline_color = Color(0.86960465, 0.3289683, 0.77553135, 1)
-shadow_size = 13
-shadow_color = Color(1, 0, 0, 0.7764706)
+outline_color = Color(0, 0, 0, 1)
 
 [node name="GameManager" type="Node" unique_id=997689895]
 process_mode = 3
