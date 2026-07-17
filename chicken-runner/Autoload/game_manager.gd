@@ -4,7 +4,7 @@ signal scene_loaded
 
 const FADE_DURATION : float = 0.3
 const LAST_LEVEL : int = 3
-const LOAD_SCREEN_MIN_DURATION : float = 3.0
+const LOAD_SCREEN_MIN_DURATION : float = 2.0
 const CONSUMABLES_PATH : String = "res://items/consumables/resources/"
 const EQUIPMENT_PATH : String = "res://items/equipment/resources/"
 
