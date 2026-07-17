@@ -33,4 +33,7 @@ func _calculate_heat_gain(player_heat_gain_modifier: float) -> void:
 
 func _on_completion_zone_entered() -> void:
 	AudioManager.play_chicken_cockledoodledoo_victory_sound()
-	player_hud.show_reward_scene()
+	if GameManager.current_level != GameManager.LAST_LEVEL:
+		player_hud.show_reward_scene()
+	else:
+		GameManager.next_level()
