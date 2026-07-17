@@ -59,3 +59,7 @@ func play_sizzle_effect() -> void:
 
 func stop_sizzle_effect() -> void:
 	sizzle_effect_player.stop()
+
+func play_heat_death_sfx() -> void:
+	sound_effects_player.stream = DIE_OF_HEAT
+	sound_effects_player.play()
