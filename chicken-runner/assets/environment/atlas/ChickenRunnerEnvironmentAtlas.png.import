@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c02ilkm13n0ew"
-path="res://.godot/imported/ChickenRunnerEnvironmentAtlas.png-0055a0cfa931f8f802a73fb6598a97d3.ctex"
+path="res://.godot/imported/ChickenRunnerEnvironmentAtlas.png-857faa21b6ffdf3bd0961188e623277b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/sprites/ChickenRunnerEnvironmentAtlas.png"
-dest_files=["res://.godot/imported/ChickenRunnerEnvironmentAtlas.png-0055a0cfa931f8f802a73fb6598a97d3.ctex"]
+source_file="res://assets/environment/atlas/ChickenRunnerEnvironmentAtlas.png"
+dest_files=["res://.godot/imported/ChickenRunnerEnvironmentAtlas.png-857faa21b6ffdf3bd0961188e623277b.ctex"]
 
 [params]
 

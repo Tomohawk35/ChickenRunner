@@ -1,9 +1,33 @@
 [gd_scene format=3 uid="uid://dyfc3e0yrrdkp"]
 
 [ext_resource type="Script" uid="uid://cgh1v6jgerdlm" path="res://chicken/chicken.gd" id="1_pclo1"]
-[ext_resource type="Texture2D" uid="uid://biytj1uk41jcm" path="res://assets/kenney_animal-pack-remastered/PNG/Round/chicken.png" id="2_pclo1"]
+[ext_resource type="Texture2D" uid="uid://c02ilkm13n0ew" path="res://assets/environment/atlas/ChickenRunnerEnvironmentAtlas.png" id="2_pclo1"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rtt68"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7l81"]
+atlas = ExtResource("2_pclo1")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s6dx"]
+atlas = ExtResource("2_pclo1")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmwqp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7l81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6s6dx")
+}],
+"loop": 1,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xsytg"]
+radius = 7.0
+height = 28.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nmmnu"]
 radius = 13.0
@@ -13,20 +37,12 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_pclo1")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=362522952]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_pclo1")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1237596888]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_hmwqp")
+animation = &"Walk"
+frame_progress = 0.27948937
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=946184134]
 position = Vector2(0, 1)
-shape = SubResource("CircleShape2D_rtt68")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1176070470]
-collision_layer = 2
-collision_mask = 5
-monitorable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=372357217]
-position = Vector2(0, 1)
-shape = SubResource("CircleShape2D_nmmnu")
-debug_color = Color(0.78603417, 0.30318707, 0.7783108, 0.41960785)
+shape = SubResource("CapsuleShape2D_xsytg")
