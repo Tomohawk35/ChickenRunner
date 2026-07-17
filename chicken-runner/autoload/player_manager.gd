@@ -98,7 +98,9 @@ func switch_equipment() -> void:
 	equipment_changed.emit()
 
 func get_next_equipment(increment: int = 0) -> Equipment:
-	if increment > equipment.size() or equipment.size() == 0:
+	if equipment.size() == 0:
+		return
+	if increment >= equipment.size():
 		return null
 	var slot_number : int = (selected_equipment + increment) % equipment.size()
 	return equipment[slot_number]
