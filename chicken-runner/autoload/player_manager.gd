@@ -31,6 +31,13 @@ var _cooling_count : int = 0
 var is_cooling : bool:
 	get: return _cooling_count > 0
 
+func initialize_player() -> void:
+	reset_heat()
+	heat_gain_rate = 0.0
+	move_speed = 0.0
+	consumable = null
+	equipment.clear()
+	selected_equipment = 0
 
 func reset_heat() -> void:
 	heat_level = 0.0
