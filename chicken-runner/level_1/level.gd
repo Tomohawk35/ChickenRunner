@@ -32,4 +32,5 @@ func _calculate_heat_gain(player_heat_gain_modifier: float) -> void:
 	_heat_gain_rate = base_heat_gain_rate + player_heat_gain_modifier
 
 func _on_completion_zone_entered() -> void:
+	AudioManager.play_chicken_cockledoodledoo_victory_sound()
 	player_hud.show_reward_scene()
