@@ -63,3 +63,11 @@ func stop_sizzle_effect() -> void:
 func play_heat_death_sfx() -> void:
 	sound_effects_player.stream = DIE_OF_HEAT
 	sound_effects_player.play()
+
+func play_chicken_exclamation_sfx() -> void:
+	sound_effects_player.stream = CHICKEN_SFX_POWER_UP
+	sound_effects_player.play()
+
+func play_chicken_warp_sfx() -> void:
+	sound_effects_player.stream = CHICKEN_GOLD_FEATHER
+	sound_effects_player.play()
