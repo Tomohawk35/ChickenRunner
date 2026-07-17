@@ -5,12 +5,16 @@
 [ext_resource type="Texture2D" uid="uid://bwjfxlrxho8bu" path="res://assets/kyrise_rpg_icon_pack/16x16/sword_02b.png" id="2_qxuqg"]
 
 [node name="EquipmentSlotUI" type="TextureRect" unique_id=733859513]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
 size_flags_horizontal = 0
 texture = ExtResource("1_w26ga")
 script = ExtResource("2_4n8qk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1059997122]
-position = Vector2(16, 16)
+position = Vector2(32, 32)
+scale = Vector2(2, 2)
 texture = ExtResource("2_qxuqg")
 
 [node name="CooldownPanel" type="Panel" parent="." unique_id=1226694164]
