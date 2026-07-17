@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://c7aoppr0qkjtn"]
+
+[ext_resource type="Texture2D" uid="uid://c02ilkm13n0ew" path="res://assets/environment/atlas/ChickenRunnerEnvironmentAtlas.png" id="1_pojs8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tn2g7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kmi52"]
+texture = SubResource("CompressedTexture2D_tn2g7")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_if66e"]
+texture = ExtResource("1_pojs8")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g0j66"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_kmi52")
+sources/1 = SubResource("TileSetAtlasSource_if66e")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v01vn"]
+radius = 10.049875
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hmwqp"]
+radius = 5.0
+
+[node name="SpriteCactus1" type="Node2D" unique_id=95512514]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1740602769]
+texture_filter = 1
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+tile_set = SubResource("TileSet_g0j66")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1967217303]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1361505743]
+position = Vector2(33, 28)
+shape = SubResource("CircleShape2D_v01vn")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="." unique_id=1029479018]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=1811971375]
+position = Vector2(17, 37)
+shape = SubResource("CircleShape2D_hmwqp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=1975231921]
+position = Vector2(40, 40)
+shape = SubResource("CircleShape2D_hmwqp")

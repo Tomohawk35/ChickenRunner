@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c4mxrhud2kgek"]
+
+[ext_resource type="Texture2D" uid="uid://c02ilkm13n0ew" path="res://assets/environment/atlas/ChickenRunnerEnvironmentAtlas.png" id="1_kygss"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dkjk"]
+atlas = ExtResource("1_kygss")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6ioh"]
+atlas = ExtResource("1_kygss")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmwqp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dkjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6ioh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fwywq"]
+radius = 5.999843
+height = 63.99833
+
+[node name="SpriteSnake" type="Node2D" unique_id=187008172]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1144158353]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_hmwqp")
+frame_progress = 0.78993315
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1475131887]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1089236467]
+position = Vector2(0, -2)
+rotation = 1.5635691
+shape = SubResource("CapsuleShape2D_fwywq")
