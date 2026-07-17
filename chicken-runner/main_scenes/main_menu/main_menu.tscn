@@ -1,0 +1,202 @@
+[gd_scene format=3 uid="uid://ccghfwhfqeydf"]
+
+[ext_resource type="Script" uid="uid://b8jppogi8mavb" path="res://main_scenes/main_menu/main_menu.gd" id="1_70phs"]
+[ext_resource type="Theme" uid="uid://b1sjlmnw4xnce" path="res://project_theme.tres" id="2_y8l6a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pq8uq"]
+font_size = 100
+font_color = Color(1, 0.50980395, 0, 1)
+outline_size = 5
+outline_color = Color(0.86960465, 0.3289683, 0.77553135, 1)
+shadow_size = 13
+shadow_color = Color(1, 0, 0, 0.7764706)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8l6a"]
+bg_color = Color(0, 0.7254902, 0.24313726, 0.827451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7aam"]
+bg_color = Color(0, 0.6, 1, 1)
+
+[node name="MainMenu" type="Control" unique_id=1235246227]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_70phs")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=425148318]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=443800750]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1718537717]
+layout_mode = 2
+text = "Chicken Runner"
+label_settings = SubResource("LabelSettings_pq8uq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer" unique_id=816947068]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="StartGameButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=1520385454]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_y8l6a")
+theme_type_variation = &"CustomMenuButton"
+text = "Start Game"
+
+[node name="OptionsButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=374200735]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_y8l6a")
+theme_type_variation = &"CustomMenuButton"
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=46686165]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_y8l6a")
+theme_type_variation = &"CustomMenuButton"
+text = "Credits"
+
+[node name="ExitButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=1938226035]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_y8l6a")
+theme_type_variation = &"CustomMenuButton"
+text = "Exit"
+
+[node name="CreditsPanel" type="PanelContainer" parent="." unique_id=455196220]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -151.0
+offset_right = 204.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CreditsPanel" unique_id=1867878199]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsPanel/MarginContainer" unique_id=1519289530]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Label" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer" unique_id=1650732432]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CreditsPanel/MarginContainer/VBoxContainer" unique_id=1011593721]
+custom_maximum_size = Vector2(-1, 512)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=501044088]
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1777895057]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Gamers Home Summer Game Jam 2026 Submission"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=904690812]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2063876521]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Team Lead: ChickenVicken"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=831178719]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Programmers: Tomohawk, AjithKuppam"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=849816256]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Artists: Peri"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=458734261]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Sound: MiniComp"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=159571609]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Music: Seberster"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1581234763]
+visible = false
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer2" unique_id=153878383]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Gamers Home Summer Game Jam 2026 Submission"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer2" unique_id=1789305758]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Team Lead: ChickenVicken"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CloseButton" type="Button" parent="CreditsPanel/MarginContainer/VBoxContainer" unique_id=907908448]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_y8l6a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q7aam")
+text = "Close"

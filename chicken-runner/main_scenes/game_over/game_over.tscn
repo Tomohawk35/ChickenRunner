@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cilxyeywaty0j"]
+
+[ext_resource type="Script" uid="uid://dhqwmro8kbi5n" path="res://main_scenes/game_over/game_over.gd" id="1_d1meb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m37it"]
+font_size = 100
+font_color = Color(1, 0.50980395, 0, 1)
+outline_size = 5
+outline_color = Color(0.86960465, 0.3289683, 0.77553135, 1)
+shadow_size = 13
+shadow_color = Color(1, 0, 0, 0.7764706)
+
+[node name="Game Over" type="Control" unique_id=1392295141]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d1meb")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1746116327]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1019511224]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=3348890]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_m37it")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer" unique_id=480118012]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Restart" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=928531027]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Restart"
+
+[node name="BacktoMenu" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=1436307635]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Main Menu"

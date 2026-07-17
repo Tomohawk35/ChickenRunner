@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://bq851ectjgamk"]
+
+[ext_resource type="Script" uid="uid://dcoimrrqj1xos" path="res://main_scenes/Options/sound.gd" id="1_snd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c78a1"]
+bg_color = Color(0.9019608, 0.4509804, 0.29803923, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.83137256, 0.3647059, 0.22352941, 1)
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+shadow_color = Color(0, 0, 0, 0.7411765)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_581ru"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.98039216, 0.59607846, 0.34901962, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7b1o2"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.9019608, 0.4509804, 0.29803923, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.99215686, 0.8627451, 0.5921569, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Sound" type="PanelContainer" unique_id=947446182]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.5
+offset_top = -148.5
+offset_right = 196.5
+offset_bottom = 148.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_snd")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=791303108]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=716458878]
+layout_mode = 2
+alignment = 1
+
+[node name="master_vol" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1667318232]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="Master" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=97048489]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/Master" unique_id=2042121409]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_c78a1")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_581ru")
+value = 100.0
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/Master" unique_id=54515267]
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_581ru")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_7b1o2")
+text = "Mute"
+
+[node name="music_vol" type="Label" parent="MarginContainer/VBoxContainer" unique_id=836960980]
+layout_mode = 2
+text = "Music volume"
+
+[node name="Music" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1210288342]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/Music" unique_id=251345639]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_c78a1")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_581ru")
+value = 100.0
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/Music" unique_id=654877696]
+layout_mode = 2
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_7b1o2")
+text = "Mute"
+
+[node name="vfx_vol" type="Label" parent="MarginContainer/VBoxContainer" unique_id=692154652]
+layout_mode = 2
+text = "Sfx volume"
+
+[node name="SFX" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1744522722]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/SFX" unique_id=1237391332]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_c78a1")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_581ru")
+value = 100.0
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/SFX" unique_id=341499812]
+layout_mode = 2
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_7b1o2")
+text = "Mute"

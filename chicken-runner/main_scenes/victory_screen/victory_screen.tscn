@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dqt2r7qcy7pcn"]
+
+[ext_resource type="Script" uid="uid://eyntmvrtmrb6" path="res://main_scenes/victory_screen/victory_screen.gd" id="1_355gn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tdgg3"]
+font_size = 100
+font_color = Color(0.70509714, 0.68692124, 0.09083664, 1)
+outline_size = 5
+outline_color = Color(0.12120066, 0.038661536, 0.0016563355, 1)
+shadow_size = 13
+shadow_color = Color(0.15064436, 0.052732714, 0.076602586, 0.7764706)
+
+[node name="VictoryScreen" type="Control" unique_id=1517767923]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_355gn")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1734907199]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1168285167]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1857190773]
+layout_mode = 2
+text = "VICTORY!!"
+label_settings = SubResource("LabelSettings_tdgg3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer" unique_id=1620459298]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MenuButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=1843392696]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Return to Menu"
+
+[node name="ExitButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=267010922]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Exit Game"

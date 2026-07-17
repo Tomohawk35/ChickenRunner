@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dik0sf86ackw2"]
+
+[ext_resource type="Texture2D" uid="uid://drwse2c6im583" path="res://assets/crusenho_ui_essentials/Sprites/UI_Flat_FrameSlot01b.png" id="1_w26ga"]
+[ext_resource type="Script" uid="uid://bnlg1kamfuj3b" path="res://main_scenes/player_hud/equipment_slot_ui.gd" id="2_4n8qk"]
+[ext_resource type="Texture2D" uid="uid://bwjfxlrxho8bu" path="res://assets/kyrise_rpg_icon_pack/16x16/sword_02b.png" id="2_qxuqg"]
+
+[node name="EquipmentSlotUI" type="TextureRect" unique_id=733859513]
+size_flags_horizontal = 0
+texture = ExtResource("1_w26ga")
+script = ExtResource("2_4n8qk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1059997122]
+position = Vector2(16, 16)
+texture = ExtResource("2_qxuqg")
+
+[node name="CooldownPanel" type="Panel" parent="." unique_id=1226694164]
+visible = false
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="Label" type="Label" parent="CooldownPanel" unique_id=1424165201]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1

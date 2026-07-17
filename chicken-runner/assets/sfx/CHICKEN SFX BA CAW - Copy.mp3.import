@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0x2d0tl0rhex"
+path="res://.godot/imported/CHICKEN SFX BA CAW - Copy.mp3-2f5cafb1b12721e85a485855f7ecc3d3.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/CHICKEN SFX BA CAW - Copy.mp3"
+dest_files=["res://.godot/imported/CHICKEN SFX BA CAW - Copy.mp3-2f5cafb1b12721e85a485855f7ecc3d3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

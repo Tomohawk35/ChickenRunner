@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://cul6clwk488qj"]
+
+[ext_resource type="Script" uid="uid://bkvt64sjjrrdu" path="res://main_scenes/Options/controls.gd" id="1_ctrl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_44juv"]
+font_size = 30
+font_color = Color(0.4627451, 0.95686275, 0.6, 1)
+outline_size = 5
+outline_color = Color(0.12120066, 0.038661536, 0.0016563355, 1)
+shadow_size = 13
+shadow_color = Color(0.15064436, 0.052732714, 0.076602586, 0.7764706)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_y8l6a"]
+thickness = 5
+
+[node name="Controls" type="PanelContainer" unique_id=951515874]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -358.5
+offset_top = -266.0
+offset_right = 358.5
+offset_bottom = 266.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_ctrl")
+
+[node name="Panel" type="Panel" parent="." unique_id=754862170]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=930026212]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = -15.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=467869473]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1331170769]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Rebind Controls"
+label_settings = SubResource("LabelSettings_44juv")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer" unique_id=1271331638]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_y8l6a")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=424397958]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ActionList" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1036088011]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="UpLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=1734643570]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Move Up"
+vertical_alignment = 1
+
+[node name="UpButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=1056488853]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "..."
+
+[node name="LeftLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=1232448750]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Move Left"
+vertical_alignment = 1
+
+[node name="LeftButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=1909396368]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "..."
+
+[node name="DownLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=1924977647]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Move Down"
+vertical_alignment = 1
+
+[node name="DownButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=1668329679]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "..."
+
+[node name="RightLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=883865817]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Move Right"
+vertical_alignment = 1
+
+[node name="RightButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=973120535]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "..."
+
+[node name="ConsumableLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=977071081]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Use Consumable"
+vertical_alignment = 1
+
+[node name="ConsumableButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=70733162]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "..."
+
+[node name="ClickLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=288637936]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Click"
+vertical_alignment = 1
+
+[node name="ClickButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=325346135]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "..."
+
+[node name="ToggleEquipmentLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=1103632230]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Toggle Equipment"
+vertical_alignment = 1
+
+[node name="ToggleEquipmentButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=1423949203]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "..."
+
+[node name="EquipmentLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=303804520]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Use Equipment"
+vertical_alignment = 1
+
+[node name="EquipmentButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=32676739]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "..."

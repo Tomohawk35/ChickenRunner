@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ceru2nnvsphab"
+path="res://.godot/imported/CAR DRIVING BY WITH HONK.mp3-861c38d4608dfa05bf53187ed9e66c42.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/CAR DRIVING BY WITH HONK.mp3"
+dest_files=["res://.godot/imported/CAR DRIVING BY WITH HONK.mp3-861c38d4608dfa05bf53187ed9e66c42.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ck5y5co86o7vp"]
+
+[ext_resource type="Script" uid="uid://sfpfpegbotsn" path="res://main_scenes/pause_menu/pause_menu.gd" id="1_gww5f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qj51i"]
+font_size = 100
+font_color = Color(1, 0.50980395, 0, 1)
+outline_size = 5
+outline_color = Color(0.86960465, 0.3289683, 0.77553135, 1)
+shadow_size = 13
+shadow_color = Color(1, 0, 0, 0.7764706)
+
+[node name="PauseMenu" type="Control" unique_id=176501694]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gww5f")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=311605448]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel" unique_id=1447884770]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Paused"
+label_settings = SubResource("LabelSettings_qj51i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=560434361]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer" unique_id=1253795772]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Resume"
+
+[node name="BacktoMenu" type="Button" parent="Panel/VBoxContainer" unique_id=591707612]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Main Menu"

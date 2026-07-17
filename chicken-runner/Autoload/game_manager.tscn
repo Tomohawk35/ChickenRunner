@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ca5oy0v1raa6w"]
+
+[ext_resource type="Script" uid="uid://cjv6rbo04veej" path="res://Autoload/game_manager.gd" id="1_1shkg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1shkg"]
+font_size = 45
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="GameManager" type="Node" unique_id=997689895]
+process_mode = 3
+script = ExtResource("1_1shkg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1251216696]
+layer = 10
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=289628747]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="joke" type="Label" parent="CanvasLayer" unique_id=2097424450]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = -1
+anchor_left = 0.0171875
+anchor_top = 0.80972224
+anchor_right = 0.98515624
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "CHICKEN JOKE"
+label_settings = SubResource("LabelSettings_1shkg")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true

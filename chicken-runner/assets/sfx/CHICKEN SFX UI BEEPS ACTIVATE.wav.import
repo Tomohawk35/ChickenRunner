@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://smmmbuk7becd"
+path="res://.godot/imported/CHICKEN SFX UI BEEPS ACTIVATE.wav-0c0f33571550fe78bc6d4f92ae8ea511.sample"
+
+[deps]
+
+source_file="res://assets/sfx/CHICKEN SFX UI BEEPS ACTIVATE.wav"
+dest_files=["res://.godot/imported/CHICKEN SFX UI BEEPS ACTIVATE.wav-0c0f33571550fe78bc6d4f92ae8ea511.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
