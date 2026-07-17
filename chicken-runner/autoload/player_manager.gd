@@ -6,6 +6,7 @@ signal heat_gain_rate_changed(new_heat_gain_rate: float)
 signal move_speed_changed(new_move_speed: float)
 signal consumable_changed
 signal equipment_changed
+signal chicken_died
 
 var consumable : Consumable
 var equipment : Array[Equipment] = []
@@ -49,7 +50,8 @@ func increase_heat(value: float) -> void:
 	else:
 		AudioManager.stop_sizzle_effect()
 	if heat_level >= 100.0:
-		GameManager.game_over()
+		AudioManager.stop_sizzle_effect()
+		chicken_died.emit()
 
 func increase_heat_gain_rate(value: float) -> void:
 	heat_gain_rate += value
