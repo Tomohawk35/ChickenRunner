@@ -24,6 +24,7 @@ const PROJECT_76_3 : AudioStreamMP3 = preload("uid://be5eusl3scf52") # TODO: Rep
 
 @onready var sound_effects_player: AudioStreamPlayer = %SoundEffectsPlayer
 @onready var background_music_player: AudioStreamPlayer = %BackgroundMusicPlayer
+@onready var sizzle_effect_player: AudioStreamPlayer = %SizzleEffectPlayer
 
 func _ready() -> void:
 	play_background_music()
@@ -50,3 +51,11 @@ func play_chicken_hit_sound() -> void:
 func play_chicken_cockledoodledoo_victory_sound() -> void:
 	sound_effects_player.stream = CHICKEN_SFX_1_COCKLEDOODLEDOO
 	sound_effects_player.play()
+
+func play_sizzle_effect() -> void:
+	if sizzle_effect_player.playing:
+		return
+	sizzle_effect_player.play()
+
+func stop_sizzle_effect() -> void:
+	sizzle_effect_player.stop()

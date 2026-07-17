@@ -3,7 +3,7 @@ class_name Level
 
 const HEAT_GAIN_INTERVAL : float = 1.0
 
-@export var base_heat_gain_rate : float = 2.0
+@export var base_heat_gain_rate : float = 5.0
 
 @onready var chicken: Chicken = $Chicken
 @onready var player_hud: CanvasLayer = $PlayerHud

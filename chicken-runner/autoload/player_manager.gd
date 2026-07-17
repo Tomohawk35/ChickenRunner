@@ -37,6 +37,10 @@ func reset_heat() -> void:
 	
 func increase_heat(value: float) -> void:
 	heat_level = clampf(heat_level + value, 0.0, 100.0)
+	if heat_level >= 75.0:
+		AudioManager.play_sizzle_effect()
+	else:
+		AudioManager.stop_sizzle_effect()
 	if heat_level >= 100.0:
 		GameManager.game_over()
 
