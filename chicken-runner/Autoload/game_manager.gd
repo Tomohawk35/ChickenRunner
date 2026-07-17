@@ -121,6 +121,7 @@ func get_random_equipment() -> Equipment:
 func new_game() -> void:
 	_tree.paused = false
 	current_level = 1
+	PlayerManager.initialize_player()
 	change_scene("level_" + str(current_level))
 
 func next_level() -> void:
