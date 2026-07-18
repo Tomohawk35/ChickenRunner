@@ -44,6 +44,8 @@ func _physics_process(delta: float) -> void:
 			immunity_duration = 0.0
 			is_immune = false
 			immunity_ended.emit()
+	for e in equipment:
+		e.process(delta)
 
 func initialize_player() -> void:
 	reset_heat()

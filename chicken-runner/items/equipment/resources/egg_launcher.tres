@@ -4,11 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://c02ilkm13n0ew" path="res://assets/environment/atlas/ChickenRunnerEnvironmentAtlas.png" id="2_5oviw"]
 [ext_resource type="Script" uid="uid://jq1io3w1cnli" path="res://items/equipment/equipment.gd" id="2_ipdlf"]
 [ext_resource type="Script" uid="uid://cu38kun1mporc" path="res://items/item_effects/item_use_effect.gd" id="3_5oviw"]
+[ext_resource type="Script" uid="uid://wbn7i3a817g4" path="res://items/item_effects/usage_types/usage_type_cooldown.gd" id="4_o4njg"]
 [ext_resource type="Script" uid="uid://dnye17kfulmq1" path="res://items/item_effects/item_use_effects/item_use_effect_fire_projectile.gd" id="5_o4njg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w4m4i"]
 atlas = ExtResource("2_5oviw")
 region = Rect2(256, 192, 64, 64)
+
+[sub_resource type="Resource" id="Resource_cftsx"]
+script = ExtResource("4_o4njg")
+cooldown = 3.0
+metadata/_custom_type_script = "uid://wbn7i3a817g4"
 
 [sub_resource type="Resource" id="Resource_o4njg"]
 script = ExtResource("5_o4njg")
@@ -19,6 +25,7 @@ metadata/_custom_type_script = "uid://dnye17kfulmq1"
 [resource]
 script = ExtResource("2_ipdlf")
 use_effects = Array[ExtResource("3_5oviw")]([SubResource("Resource_o4njg")])
+usage_type = SubResource("Resource_cftsx")
 item_name = "Egg Launcher"
 description = "Finally time to put these eggs to use."
 icon = SubResource("AtlasTexture_w4m4i")
