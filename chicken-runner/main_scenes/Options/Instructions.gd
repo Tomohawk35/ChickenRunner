@@ -3,13 +3,14 @@ extends PanelContainer
 @onready var movement: RichTextLabel = $Panel/MarginContainer/VBoxContainer/HBoxContainer/Movement
 @onready var abilities: RichTextLabel = $Panel/MarginContainer/VBoxContainer/HBoxContainer/Abilities
 @onready var pause_label: Label = $Panel/MarginContainer/VBoxContainer/HBoxContainer/pause
-@onready var close_button: Button = $Panel/Button
+@onready var close_button: Button = $Panel/Close
 
 func _ready() -> void:
 	_populate()
 	close_button.pressed.connect(_on_close_pressed)
 	close_button.mouse_entered.connect(AudioManager.play_button_hover_sound)
-
+	close_button.action_mode = Button.ACTION_MODE_BUTTON_PRESS
+	
 func _populate() -> void:
 	movement.text = "[center][b][color=gold][font_size=24] MOVEMENT CONTROLS[/font_size][/color][/b][/center]\n\nUp\t-\t%s\nLeft\t-\t%s\nDown\t-\t%s\nRight\t-\t%s" % [
 		_key_for("up"), _key_for("left"), _key_for("down"), _key_for("right")
@@ -33,6 +34,7 @@ func open() -> void:
 	_populate()
 	get_tree().paused = true
 	show()
+	close_button.grab_focus()
 
 func _on_close_pressed() -> void:
 	AudioManager.play_button_click_sound()
