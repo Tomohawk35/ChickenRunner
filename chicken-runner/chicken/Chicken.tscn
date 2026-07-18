@@ -4,8 +4,33 @@
 [ext_resource type="Texture2D" uid="uid://biytj1uk41jcm" path="res://assets/kenney_animal-pack-remastered/PNG/Round/chicken.png" id="2_pclo1"]
 [ext_resource type="Texture2D" uid="uid://ciaeu0pag8ah2" path="res://assets/ghostpixells_pixelfood/85_roastedchicken.png" id="3_6s6dx"]
 [ext_resource type="AudioStream" uid="uid://8pnqyyq08grh" path="res://assets/sfx/DIE OF HEAT.mp3" id="4_u6vjc"]
+[ext_resource type="Texture2D" uid="uid://c02ilkm13n0ew" path="res://assets/environment/atlas/ChickenRunnerEnvironmentAtlas.png" id="2_pclo1"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rtt68"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7l81"]
+atlas = ExtResource("2_pclo1")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s6dx"]
+atlas = ExtResource("2_pclo1")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmwqp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7l81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6s6dx")
+}],
+"loop": 1,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xsytg"]
+radius = 7.0
+height = 28.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nmmnu"]
 radius = 13.0
@@ -227,9 +252,11 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_pclo1")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=362522952]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_pclo1")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1237596888]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_hmwqp")
+animation = &"Walk"
+frame_progress = 0.27948937
 
 [node name="FriedChickenSprite" type="Sprite2D" parent="." unique_id=563710803]
 texture = ExtResource("3_6s6dx")
@@ -254,3 +281,4 @@ autoplay = &"idle"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1137921810]
 bus = &"SFX"
+shape = SubResource("CapsuleShape2D_xsytg")

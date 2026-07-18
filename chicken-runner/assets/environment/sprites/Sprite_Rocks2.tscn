@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://c1odb5ijyrr45"]
+
+[ext_resource type="Texture2D" uid="uid://c02ilkm13n0ew" path="res://assets/environment/atlas/ChickenRunnerEnvironmentAtlas.png" id="1_4po0g"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tn2g7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ux236"]
+texture = SubResource("CompressedTexture2D_tn2g7")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fflvk"]
+texture = ExtResource("1_4po0g")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_781am"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_ux236")
+sources/1 = SubResource("TileSetAtlasSource_fflvk")
+
+[node name="SpriteRocks1" type="Node2D" unique_id=747546974]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1914158186]
+texture_filter = 1
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 1, 0, 0, 0)
+tile_set = SubResource("TileSet_781am")
