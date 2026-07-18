@@ -7,6 +7,8 @@ signal move_speed_changed(new_move_speed: float)
 signal consumable_changed
 signal equipment_changed
 signal chicken_died
+signal immunity_started
+signal immunity_ended
 
 var consumable : Consumable
 var equipment : Array[Equipment] = []
@@ -41,6 +43,7 @@ func _physics_process(delta: float) -> void:
 		if immunity_duration <= 0.0:
 			immunity_duration = 0.0
 			is_immune = false
+			immunity_ended.emit()
 
 func initialize_player() -> void:
 	reset_heat()
@@ -126,3 +129,4 @@ func cooling_unref() -> void:
 func start_immunity(duration: float) -> void:
 	immunity_duration = duration
 	is_immune = true
+	immunity_started.emit()

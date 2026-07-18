@@ -1,9 +1,10 @@
 extends Node
 
-enum ProjType { SWIPE }
+enum ProjType { SWIPE, EGG }
 
 const PROJECTILE_SCENES : Dictionary[ProjType, String] = {
 	ProjType.SWIPE: "uid://6jvklk5gngfb",
+	ProjType.EGG: "uid://p7q2ilbrr6n3",
 }
 
 func spawn_projectile(type: ProjType, speed: float, dir: Vector2) -> bool:
@@ -17,7 +18,9 @@ func spawn_projectile(type: ProjType, speed: float, dir: Vector2) -> bool:
 	proj_inst.set_velocity(speed, dir)
 	var proj_root : Node2D = get_tree().get_first_node_in_group("projectile_root")
 	if proj_root:
-		proj_root.add_child(proj_inst) 
+		proj_root.add_child(proj_inst)
+		if type == ProjType.EGG:
+			AudioManager.play_egg_shoot_sfx()
 		return true
 	else:
 		return false

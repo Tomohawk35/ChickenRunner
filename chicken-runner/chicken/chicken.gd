@@ -12,6 +12,7 @@ var _dead : bool = false
 @onready var area_2d: Area2D = $Area2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var particles : GPUParticles2D = $GPUParticles2D
 
 func _ready() -> void:
 	area_2d.body_entered.connect(_on_body_entered)
@@ -20,6 +21,12 @@ func _ready() -> void:
 	_update_speed(PlayerManager.move_speed)
 	PlayerManager.move_speed_changed.connect(_update_speed)
 	PlayerManager.chicken_died.connect(_on_chicken_heat_death)
+	PlayerManager.immunity_started.connect(_on_immunity_started)
+	PlayerManager.immunity_ended.connect(_on_immunity_ended)
+	if PlayerManager.is_immune:
+		particles.emitting = true
+	else:
+		particles.emitting = false
 
 func _process(_delta: float) -> void:
 	if _direction != Vector2.ZERO:
@@ -50,6 +57,12 @@ func _on_chicken_heat_death() -> void:
 	animation_player.play("death")
 	await animation_player.animation_finished
 	GameManager.game_over()
+
+func _on_immunity_started() -> void:
+	particles.emitting = true
+
+func _on_immunity_ended() -> void:
+	particles.emitting = false
 
 func _get_direction() -> Vector2:
 	return Input.get_vector("left", "right", "up", "down")

@@ -12,11 +12,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("moving_objects"):
-		body.queue_free() # FIXME : Move to moving object script to incorporate a destroy effect
+		body.queue_free() 
 		queue_free()
-
-#func set_position(pos: Vector2) -> void:
-	#global_position = pos
 
 func set_velocity(speed: float, dir: Vector2) -> void:
 	_velocity = speed * dir

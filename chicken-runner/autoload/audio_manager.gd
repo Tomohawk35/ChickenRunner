@@ -71,3 +71,7 @@ func play_chicken_exclamation_sfx() -> void:
 func play_chicken_warp_sfx() -> void:
 	sound_effects_player.stream = CHICKEN_GOLD_FEATHER
 	sound_effects_player.play()
+
+func play_egg_shoot_sfx() -> void:
+	sound_effects_player.stream = CHICKEN_EGG_SHOOT
+	sound_effects_player.play()

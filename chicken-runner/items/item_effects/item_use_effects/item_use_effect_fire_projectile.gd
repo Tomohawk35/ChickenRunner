@@ -1,12 +1,13 @@
 extends ItemUseEffect
 class_name ItemUseEffectFireProjectile
 
-enum ProjType { SWIPE }
+#enum ProjType { SWIPE, EGG }
 enum Direction { UP, DOWN, LEFT, RIGHT }
 
-const PROJECTILE_SCENES : Dictionary[ProjType, String] = {
-	ProjType.SWIPE: "uid://6jvklk5gngfb",
-}
+#const PROJECTILE_SCENES : Dictionary[ProjType, String] = {
+	#ProjType.SWIPE: "uid://6jvklk5gngfb",
+	#ProjType.EGG: "uid://p7q2ilbrr6n3",
+#}
 
 const DIR_TRANSLATION : Dictionary[Direction, Vector2] = {
 	Direction.UP : Vector2.UP,
@@ -22,7 +23,10 @@ const DIR_TRANSLATION : Dictionary[Direction, Vector2] = {
 func use() -> void:
 	#var proj_inst : PackedScene = load(PROJECTILE_SCENES[projectile])
 	match projectile:
-		ProjType.SWIPE:
+		ProjectileManager.ProjType.SWIPE:
 			if ProjectileManager.spawn_projectile(projectile, speed, DIR_TRANSLATION[direction]):
 				pass
 				# TODO: Put on cooldown or oneshot
+		ProjectileManager.ProjType.EGG:
+			if ProjectileManager.spawn_projectile(projectile, speed, DIR_TRANSLATION[direction]):
+				pass
