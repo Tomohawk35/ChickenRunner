@@ -32,11 +32,21 @@ var _cooling_count : int = 0
 var is_cooling : bool:
 	get: return _cooling_count > 0
 
+var is_immune : bool = false
+var immunity_duration : float = 0.0
+
+func _physics_process(delta: float) -> void:
+	if is_immune:
+		immunity_duration -= delta
+		if immunity_duration <= 0.0:
+			immunity_duration = 0.0
+			is_immune = false
+
 func initialize_player() -> void:
 	reset_heat()
 	heat_gain_rate = 0.0
 	move_speed = 0.0
-	consumable = null
+	consumable = load("uid://e8eftyo18lyi")
 	equipment.clear()
 	selected_equipment = 0
 
@@ -112,3 +122,7 @@ func cooling_ref() -> void:
 
 func cooling_unref() -> void:
 	_cooling_count = maxi(_cooling_count - 1, 0)
+
+func start_immunity(duration: float) -> void:
+	immunity_duration = duration
+	is_immune = true
