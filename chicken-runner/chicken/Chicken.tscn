@@ -1,36 +1,13 @@
 [gd_scene format=3 uid="uid://dyfc3e0yrrdkp"]
 
 [ext_resource type="Script" uid="uid://cgh1v6jgerdlm" path="res://chicken/chicken.gd" id="1_pclo1"]
-[ext_resource type="Texture2D" uid="uid://biytj1uk41jcm" path="res://assets/kenney_animal-pack-remastered/PNG/Round/chicken.png" id="2_pclo1"]
+[ext_resource type="Texture2D" uid="uid://c02ilkm13n0ew" path="res://assets/environment/atlas/ChickenRunnerEnvironmentAtlas.png" id="2_pclo1"]
 [ext_resource type="Texture2D" uid="uid://ciaeu0pag8ah2" path="res://assets/ghostpixells_pixelfood/85_roastedchicken.png" id="3_6s6dx"]
 [ext_resource type="AudioStream" uid="uid://8pnqyyq08grh" path="res://assets/sfx/DIE OF HEAT.mp3" id="4_u6vjc"]
-[ext_resource type="Texture2D" uid="uid://c02ilkm13n0ew" path="res://assets/environment/atlas/ChickenRunnerEnvironmentAtlas.png" id="2_pclo1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m7l81"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cpwj"]
 atlas = ExtResource("2_pclo1")
-region = Rect2(128, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6s6dx"]
-atlas = ExtResource("2_pclo1")
-region = Rect2(192, 192, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_hmwqp"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m7l81")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6s6dx")
-}],
-"loop": 1,
-"name": &"Walk",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xsytg"]
-radius = 7.0
-height = 28.0
+region = Rect2(144, 200, 32, 48)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nmmnu"]
 radius = 13.0
@@ -97,6 +74,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:texture:region")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(144, 200, 32, 48)]
+}
 
 [sub_resource type="Animation" id="Animation_hgnb8"]
 resource_name = "death"
@@ -135,7 +124,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.15, 0.19999999),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -350), Vector2(0, -350)]
+"values": [Vector2(0, 0), Vector2(0, -40), Vector2(0, -35)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -179,6 +168,7 @@ tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_meqdi"]
 resource_name = "idle"
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -239,31 +229,116 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:texture:region")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(144, 200, 32, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_sdkux"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FriedChickenSprite:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FriedChickenSprite:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:texture:region")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Rect2(144, 200, 32, 48), Rect2(208, 200, 32, 48)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hbl07"]
 _data = {
 &"RESET": SubResource("Animation_xdqej"),
 &"death": SubResource("Animation_hgnb8"),
-&"idle": SubResource("Animation_meqdi")
+&"idle": SubResource("Animation_meqdi"),
+&"walk": SubResource("Animation_sdkux")
 }
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3cpwj"]
 
 [node name="Chicken" type="CharacterBody2D" unique_id=909518055 groups=["player"]]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_pclo1")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1237596888]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_hmwqp")
-animation = &"Walk"
-frame_progress = 0.27948937
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=753530358]
+texture = SubResource("AtlasTexture_3cpwj")
 
 [node name="FriedChickenSprite" type="Sprite2D" parent="." unique_id=563710803]
 texture = ExtResource("3_6s6dx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=946184134]
-position = Vector2(0, 1)
-shape = SubResource("CircleShape2D_rtt68")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1176070470]
 collision_layer = 2
@@ -281,4 +356,6 @@ autoplay = &"idle"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1137921810]
 bus = &"SFX"
-shape = SubResource("CapsuleShape2D_xsytg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2093182438]
+shape = SubResource("CircleShape2D_3cpwj")

@@ -22,6 +22,10 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	var dir : Vector2 = _get_direction()
 	velocity = dir.normalized() * speed
+	if dir != Vector2.ZERO:
+		animation_player.play("walk")
+	else:
+		animation_player.play("idle")
 	move_and_slide()
 
 func _on_body_entered(body: Node2D) -> void:
