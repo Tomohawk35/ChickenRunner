@@ -51,6 +51,7 @@ func initialize_player() -> void:
 	move_speed = 0.0
 	consumable = load("uid://e8eftyo18lyi")
 	equipment.clear()
+	equipment.append(load("uid://dtsibum1iq6a8"))
 	selected_equipment = 0
 
 func reset_heat() -> void:
