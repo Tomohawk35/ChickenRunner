@@ -4,6 +4,7 @@ class_name Chicken
 signal completion_zone_entered
 
 const STARTING_SPEED : float = 250.0
+const CLOUD_COOLING_RATE : float = 3.0
 
 var speed : float = 250.0
 var _direction : Vector2 = Vector2.ZERO
@@ -44,7 +45,7 @@ func _physics_process(_delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Cloud:
-		PlayerManager.increase_heat_gain_rate(-20.0)
+		PlayerManager.increase_heat_gain_rate(-CLOUD_COOLING_RATE)
 	if PlayerManager.is_immune:
 		return
 	if body is MovingObject:
@@ -54,7 +55,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is Cloud:
-		PlayerManager.increase_heat_gain_rate(20.0)
+		PlayerManager.increase_heat_gain_rate(CLOUD_COOLING_RATE)
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is CompletionZone:
