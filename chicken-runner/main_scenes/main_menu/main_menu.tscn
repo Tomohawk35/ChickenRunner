@@ -5,11 +5,11 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_pq8uq"]
 font_size = 100
-font_color = Color(1, 0.50980395, 0, 1)
+font_color = Color(0.9843137, 0.99607843, 0.8745098, 1)
 outline_size = 5
 outline_color = Color(0.86960465, 0.3289683, 0.77553135, 1)
 shadow_size = 13
-shadow_color = Color(1, 0, 0, 0.7764706)
+shadow_color = Color(0.9019608, 0.4509804, 0.29803923, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8l6a"]
 bg_color = Color(0, 0.7254902, 0.24313726, 0.827451)
@@ -43,7 +43,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1718537717]
 layout_mode = 2
-text = "Chicken Runner"
+text = "BACKOW!"
 label_settings = SubResource("LabelSettings_pq8uq")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -171,6 +171,14 @@ custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "Music: Seberster"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label7" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=881934132]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Some free assets were used in this project, included assets by crusenho, ghostpixells, kenney, kyrise, ElvGames, and RoleyMoth"
 horizontal_alignment = 1
 autowrap_mode = 2
 
