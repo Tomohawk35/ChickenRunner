@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c040d24e1b1vi"]
 
-[ext_resource type="Script" path="res://main_scenes/Options/options.gd" id="1_sce6r"]
-[ext_resource type="PackedScene" path="res://main_scenes/Options/sound.tscn" id="2_66kjr"]
-[ext_resource type="PackedScene" path="res://main_scenes/Options/controls.tscn" id="3_rpf8t"]
+[ext_resource type="PackedScene" uid="uid://bq851ectjgamk" path="res://main_scenes/options_menu/sound.tscn" id="1_1le6y"]
+[ext_resource type="Script" uid="uid://3vaxlt7t8ml4" path="res://main_scenes/options_menu/options.gd" id="1_1mc3m"]
+[ext_resource type="PackedScene" uid="uid://cul6clwk488qj" path="res://main_scenes/options_menu/controls_screen.tscn" id="2_1mc3m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sce6r"]
 font_size = 90
@@ -70,7 +70,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_sce6r")
+script = ExtResource("1_1mc3m")
 
 [node name="Options" type="PanelContainer" parent="." unique_id=819689230]
 layout_mode = 1
@@ -133,19 +133,14 @@ tab_count = 2
 tab_0/title = "Sound"
 tab_1/title = "Controls"
 
-[node name="Sound" parent="Options/Panel/MarginContainer/VBoxContainer/TabBar" unique_id=947446182 instance=ExtResource("2_66kjr")]
-layout_mode = 1
-offset_left = -334.0
-offset_top = 78.0
-offset_right = 342.0
-offset_bottom = 523.0
+[node name="Sound" parent="Options/Panel/MarginContainer/VBoxContainer/TabBar" unique_id=947446182 instance=ExtResource("1_1le6y")]
+layout_mode = 0
+anchors_preset = 0
+script = null
 
-[node name="Controls" parent="Options/Panel/MarginContainer/VBoxContainer/TabBar" unique_id=951515874 instance=ExtResource("3_rpf8t")]
-layout_mode = 1
-offset_left = -348.0
-offset_top = 15.0
-offset_right = 369.0
-offset_bottom = 540.0
+[node name="Controls" parent="Options/Panel/MarginContainer/VBoxContainer/TabBar" unique_id=951515874 instance=ExtResource("2_1mc3m")]
+layout_mode = 0
+anchors_preset = 0
 
 [node name="Back" type="Button" parent="." unique_id=510890556]
 layout_mode = 1

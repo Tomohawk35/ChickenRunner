@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bq851ectjgamk"]
 
-[ext_resource type="Script" path="res://main_scenes/Options/sound.gd" id="1_snd"]
+[ext_resource type="Script" uid="uid://dcoimrrqj1xos" path="res://main_scenes/options_menu/sound.gd" id="1_yd7la"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c78a1"]
 bg_color = Color(0.9019608, 0.4509804, 0.29803923, 1)
@@ -55,7 +55,7 @@ offset_bottom = 148.5
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-script = ExtResource("1_snd")
+script = ExtResource("1_yd7la")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=791303108]
 layout_mode = 2

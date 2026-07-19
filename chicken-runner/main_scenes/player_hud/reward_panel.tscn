@@ -24,6 +24,7 @@ description_label = NodePath("MarginContainer/VBoxContainer/DescriptionLabel")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1243104261]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
@@ -32,6 +33,7 @@ theme_override_constants/margin_bottom = 8
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1055349875]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
+mouse_filter = 2
 alignment = 1
 
 [node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1103689180]
@@ -43,6 +45,7 @@ horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1059910575]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1092813435]
 unique_name_in_owner = true
@@ -50,11 +53,13 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("3_afx2d")
 stretch_mode = 4
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=300037657]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="ItemTypeLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=742519139]
 unique_name_in_owner = true
@@ -67,6 +72,7 @@ autowrap_mode = 2
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=336050451]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="DescriptionLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1891596663]
 unique_name_in_owner = true

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cul6clwk488qj"]
 
-[ext_resource type="Script" uid="uid://bkvt64sjjrrdu" path="res://main_scenes/Options/controls.gd" id="1_ctrl"]
+[ext_resource type="Script" uid="uid://4x8fdjkbl1a" path="res://main_scenes/options_menu/controls_screen.gd" id="1_uk3sm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_44juv"]
 font_size = 30
@@ -27,7 +27,7 @@ offset_bottom = 266.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-script = ExtResource("1_ctrl")
+script = ExtResource("1_uk3sm")
 
 [node name="Panel" type="Panel" parent="." unique_id=754862170]
 self_modulate = Color(1, 1, 1, 0)
