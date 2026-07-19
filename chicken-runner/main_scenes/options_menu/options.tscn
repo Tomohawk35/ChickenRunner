@@ -119,28 +119,26 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_y8l6a")
 
-[node name="TabBar" type="TabBar" parent="Options/Panel/MarginContainer/VBoxContainer" unique_id=481895250]
+[node name="TabContainer" type="TabContainer" parent="Options/Panel/MarginContainer/VBoxContainer" unique_id=481895250]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/tab_separation = 50
 theme_override_font_sizes/font_size = 20
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_tf5ee")
 theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_tkp33")
 theme_override_styles/tab_selected = SubResource("StyleBoxFlat_tpbpl")
-theme_override_styles/button_pressed = SubResource("StyleBoxFlat_tkp33")
-current_tab = 0
 tab_alignment = 1
-tab_count = 2
-tab_0/title = "Sound"
-tab_1/title = "Controls"
+current_tab = 0
 
-[node name="Sound" parent="Options/Panel/MarginContainer/VBoxContainer/TabBar" unique_id=947446182 instance=ExtResource("1_1le6y")]
-layout_mode = 0
-anchors_preset = 0
-script = null
+[node name="Sound" parent="Options/Panel/MarginContainer/VBoxContainer/TabContainer" unique_id=947446182 instance=ExtResource("1_1le6y")]
+layout_mode = 2
+metadata/_tab_index = 0
 
-[node name="Controls" parent="Options/Panel/MarginContainer/VBoxContainer/TabBar" unique_id=951515874 instance=ExtResource("2_1mc3m")]
-layout_mode = 0
-anchors_preset = 0
+[node name="Controls" parent="Options/Panel/MarginContainer/VBoxContainer/TabContainer" unique_id=951515874 instance=ExtResource("2_1mc3m")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="Back" type="Button" parent="." unique_id=510890556]
 layout_mode = 1

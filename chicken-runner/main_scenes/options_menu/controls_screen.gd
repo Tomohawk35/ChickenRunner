@@ -11,18 +11,27 @@ extends PanelContainer
 	"click": %ClickButton,
 }
 
+# Actions bound to a mouse button (rebind is key-only, so these stay fixed)
+const MOUSE_ACTIONS := {
+	"toggle_equipment": "Right Mouse",
+	"use_equipment": "Left Mouse",
+	"click": "Left Mouse",
+}
+
 var _remap_action: String = ""
 var _remap_button: Button = null
 
 func _ready() -> void:
-	print("[DIAG] controls _ready running, buttons: ", _buttons.size())
 	for action in _buttons:
 		var button: Button = _buttons[action]
 		button.text = _get_action_key_text(action)
-		button.pressed.connect(_on_remap_button_pressed.bind(action))
+		if not MOUSE_ACTIONS.has(action):
+			button.pressed.connect(_on_remap_button_pressed.bind(action))
 		button.mouse_entered.connect(AudioManager.play_button_hover_sound)
 
 func _get_action_key_text(action: String) -> String:
+	if MOUSE_ACTIONS.has(action):
+		return MOUSE_ACTIONS[action]
 	for event in InputMap.action_get_events(action):
 		if event is InputEventKey:
 			if event.physical_keycode != 0:
