@@ -36,7 +36,7 @@ var _game_scenes : Dictionary[String, String] = {
 	"level_2": "uid://bvj4u3smrfbcr",
 	"level_3": "uid://bvj4u3smrfbcr",
 	"victory": "uid://dqt2r7qcy7pcn",
-	"options":"uid://c040d24e1b1vi"
+	"options": "uid://c040d24e1b1vi"
 }
 
 @onready var _tree : SceneTree = get_tree()

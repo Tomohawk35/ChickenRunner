@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://c040d24e1b1vi"]
+
+[ext_resource type="Script" path="res://main_scenes/Options/options.gd" id="1_sce6r"]
+[ext_resource type="PackedScene" path="res://main_scenes/Options/sound.tscn" id="2_66kjr"]
+[ext_resource type="PackedScene" path="res://main_scenes/Options/controls.tscn" id="3_rpf8t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sce6r"]
+font_size = 90
+font_color = Color(0.70509714, 0.68692124, 0.09083664, 1)
+outline_size = 5
+outline_color = Color(0.12120066, 0.038661536, 0.0016563355, 1)
+shadow_size = 13
+shadow_color = Color(0.15064436, 0.052732714, 0.076602586, 0.7764706)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_y8l6a"]
+thickness = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tf5ee"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.8784314, 0.5803922, 0.49411765, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8784314, 0.5803922, 0.49411765, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkp33"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.83137256, 0.3647059, 0.22352941, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.98039216, 0.59607846, 0.34901962, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpbpl"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.9019608, 0.4509804, 0.29803923, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.99215686, 0.8627451, 0.5921569, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Options" type="Control" unique_id=941080207]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sce6r")
+
+[node name="Options" type="PanelContainer" parent="." unique_id=819689230]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Options" unique_id=417282526]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Options/Panel" unique_id=1358463721]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7426214, 0.50295657, 0.19863573, 0.6039216)
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/Panel" unique_id=472699683]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = -15.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/Panel/MarginContainer" unique_id=449076762]
+layout_mode = 2
+
+[node name="Ttile" type="Label" parent="Options/Panel/MarginContainer/VBoxContainer" unique_id=1792957765]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Options"
+label_settings = SubResource("LabelSettings_sce6r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Options/Panel/MarginContainer/VBoxContainer" unique_id=1992207241]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_y8l6a")
+
+[node name="TabBar" type="TabBar" parent="Options/Panel/MarginContainer/VBoxContainer" unique_id=481895250]
+layout_mode = 2
+theme_override_constants/tab_separation = 50
+theme_override_font_sizes/font_size = 20
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_tf5ee")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_tkp33")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_tpbpl")
+theme_override_styles/button_pressed = SubResource("StyleBoxFlat_tkp33")
+current_tab = 0
+tab_alignment = 1
+tab_count = 2
+tab_0/title = "Sound"
+tab_1/title = "Controls"
+
+[node name="Sound" parent="Options/Panel/MarginContainer/VBoxContainer/TabBar" unique_id=947446182 instance=ExtResource("2_66kjr")]
+layout_mode = 1
+offset_left = -334.0
+offset_top = 78.0
+offset_right = 342.0
+offset_bottom = 523.0
+
+[node name="Controls" parent="Options/Panel/MarginContainer/VBoxContainer/TabBar" unique_id=951515874 instance=ExtResource("3_rpf8t")]
+layout_mode = 1
+offset_left = -348.0
+offset_top = 15.0
+offset_right = 369.0
+offset_bottom = 540.0
+
+[node name="Back" type="Button" parent="." unique_id=510890556]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -138.0
+offset_bottom = 71.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "Back"

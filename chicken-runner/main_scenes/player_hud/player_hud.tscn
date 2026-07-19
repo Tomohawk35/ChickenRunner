@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c5ndpe7hmiifm" path="res://main_scenes/player_hud/player_hud.gd" id="1_4mxvl"]
 [ext_resource type="PackedScene" uid="uid://3ry0ewvq5rax" path="res://main_scenes/player_hud/heat_distortion/heat_distortion.tscn" id="2_rdpnl"]
 [ext_resource type="PackedScene" uid="uid://ck5y5co86o7vp" path="res://main_scenes/pause_menu/pause_menu.tscn" id="3_fecom"]
-[ext_resource type="PackedScene" uid="uid://buo2lb6fbi7a1" path="res://main_scenes/Options/Instructions.tscn" id="4_inst"]
+[ext_resource type="PackedScene" uid="uid://buo2lb6fbi7a1" path="res://main_scenes/options_menu/instruction_screen.tscn" id="4_inst"]
 [ext_resource type="PackedScene" uid="uid://dik0sf86ackw2" path="res://main_scenes/player_hud/equipment_slot_ui.tscn" id="4_mda12"]
 [ext_resource type="PackedScene" uid="uid://dkqn72bc82dwo" path="res://main_scenes/player_hud/consumable_slot_ui.tscn" id="4_mhd18"]
 [ext_resource type="PackedScene" uid="uid://bhbl5cp5t8clj" path="res://main_scenes/player_hud/level_complete_screen.tscn" id="6_8li8t"]

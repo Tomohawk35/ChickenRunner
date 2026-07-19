@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://buo2lb6fbi7a1"]
+
+[ext_resource type="Script" uid="uid://0hnq5riaa2jq" path="res://main_scenes/options_menu/instruction_screen.gd" id="1_74uwx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sce6r"]
+font_size = 100
+font_color = Color(0.70509714, 0.68692124, 0.09083664, 1)
+outline_size = 5
+outline_color = Color(0.12120066, 0.038661536, 0.0016563355, 1)
+shadow_size = 13
+shadow_color = Color(0.15064436, 0.052732714, 0.076602586, 0.7764706)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_y8l6a"]
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_wm3kx"]
+grow_begin = 3.0
+thickness = 3
+vertical = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_44juv"]
+font_size = 30
+font_color = Color(0.4627451, 0.95686275, 0.6, 1)
+outline_size = 5
+outline_color = Color(0.12120066, 0.038661536, 0.0016563355, 1)
+shadow_size = 13
+shadow_color = Color(0.15064436, 0.052732714, 0.076602586, 0.7764706)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ouvh5"]
+grow_begin = 3.0
+thickness = 3
+vertical = true
+
+[node name="Instructions" type="PanelContainer" unique_id=951515874]
+process_mode = 3
+self_modulate = Color(1, 1, 1, 0.40392157)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_74uwx")
+
+[node name="Panel" type="Panel" parent="." unique_id=1563167871]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=2108790745]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = -15.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1064246840]
+layout_mode = 2
+
+[node name="Ttile" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=831509095]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Controls"
+label_settings = SubResource("LabelSettings_sce6r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer" unique_id=998436737]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_y8l6a")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1842311982]
+layout_mode = 2
+alignment = 1
+
+[node name="Movement" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1136322597]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center][b][color=gold][font_size=24] MOVEMENT CONTROLS[/font_size][/color][/b][/center]
+
+UP	-  	W
+Left		-  	A
+Down	-  	S
+Right 	-  	D"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1972574039]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_wm3kx")
+
+[node name="pause" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1449995532]
+layout_mode = 2
+size_flags_vertical = 6
+text = "pause - Esc"
+label_settings = SubResource("LabelSettings_44juv")
+horizontal_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=554865577]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_ouvh5")
+
+[node name="Abilities" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1364472298]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center][b][color=gold][font_size=24]Abilities[/font_size][/color][/b][/center]
+
+Use_consumable 	-	 E
+Use_power_up 		-	 F
+Toggle_power_up 	- 	Q
+Use_equipment 		- 	Q"
+horizontal_alignment = 1
+vertical_alignment = 3
+
+[node name="Close" type="Button" parent="Panel" unique_id=1937134767]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -183.0
+offset_bottom = 80.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 50
+text = "Close"

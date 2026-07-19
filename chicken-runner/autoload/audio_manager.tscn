@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://ceq306wayysht"]
 
-[ext_resource type="Script" uid="uid://c4g0yf44g8boo" path="res://autoload/audio_manager.gd" id="1_mf8l3"]
-[ext_resource type="AudioStream" uid="uid://3f0jsvrmiobg" path="res://assets/sfx/WATER COOL OFF.mp3" id="2_rl3vi"]
-[ext_resource type="AudioStream" uid="uid://cvfar5tvrcug3" path="res://assets/sfx/Hot Sizzling - Sound Effect.mp3" id="3_5aqdv"]
+[ext_resource type="Script" uid="uid://c4g0yf44g8boo" path="res://autoload/audio_manager.gd" id="1_xdfsh"]
+[ext_resource type="AudioStream" uid="uid://3f0jsvrmiobg" path="res://assets/sfx/WATER COOL OFF.mp3" id="2_nb6j2"]
+[ext_resource type="AudioStream" uid="uid://cvfar5tvrcug3" path="res://assets/sfx/Hot Sizzling - Sound Effect.mp3" id="3_k2mv4"]
 
 [node name="AudioManager" type="Node" unique_id=1474964700]
 process_mode = 3
-script = ExtResource("1_mf8l3")
+script = ExtResource("1_xdfsh")
 
 [node name="SoundEffectsPlayer" type="AudioStreamPlayer" parent="." unique_id=505457635]
 unique_name_in_owner = true
-stream = ExtResource("2_rl3vi")
+stream = ExtResource("2_nb6j2")
 max_polyphony = 4
 bus = &"SFX"
 
@@ -20,5 +20,5 @@ bus = &"Music"
 
 [node name="SizzleEffectPlayer" type="AudioStreamPlayer" parent="." unique_id=1374318318]
 unique_name_in_owner = true
-stream = ExtResource("3_5aqdv")
+stream = ExtResource("3_k2mv4")
 bus = &"Sizzle"
