@@ -16,6 +16,7 @@ var _dead : bool = false
 
 func _ready() -> void:
 	area_2d.body_entered.connect(_on_body_entered)
+	area_2d.body_exited.connect(_on_body_exited)
 	area_2d.area_entered.connect(_on_area_entered)
 	PlayerManager.reset_heat()
 	_update_speed(PlayerManager.move_speed)
@@ -42,11 +43,18 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _on_body_entered(body: Node2D) -> void:
+	if body is Cloud:
+		PlayerManager.increase_heat_gain_rate(-20.0)
 	if PlayerManager.is_immune:
 		return
 	if body is MovingObject:
-		AudioManager.play_chicken_hit_sound()
-		GameManager.change_scene("game_over")
+		if body is not Cloud:
+			AudioManager.play_chicken_hit_sound()
+			GameManager.change_scene("game_over")
+
+func _on_body_exited(body: Node2D) -> void:
+	if body is Cloud:
+		PlayerManager.increase_heat_gain_rate(20.0)
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is CompletionZone:

@@ -37,6 +37,7 @@ var is_cooling : bool:
 var is_immune : bool = false
 var immunity_duration : float = 0.0
 
+
 func _physics_process(delta: float) -> void:
 	if is_immune:
 		immunity_duration -= delta

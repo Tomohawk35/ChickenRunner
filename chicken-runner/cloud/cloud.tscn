@@ -7,8 +7,10 @@
 size = Vector2(160, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c78a1"]
+size = Vector2(138, 43)
 
 [node name="Cloud" type="CharacterBody2D" unique_id=595913114 node_paths=PackedStringArray("sprite")]
+collision_mask = 2
 script = ExtResource("1_l4448")
 speed = 150.0
 sprite = NodePath("Sprite2D")
@@ -31,5 +33,5 @@ collision_mask = 2
 shape = SubResource("RectangleShape2D_wa8kl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=681162946]
+position = Vector2(5, 0.5)
 shape = SubResource("RectangleShape2D_c78a1")
-disabled = true

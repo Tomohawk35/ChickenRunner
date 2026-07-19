@@ -9,8 +9,9 @@ class_name Cloud
 @onready var shadow_zone: Area2D = $ShadowZone
 
 func _ready() -> void:
-	shadow_zone.body_entered.connect(_on_shadow_zone_body_entered)
-	shadow_zone.body_exited.connect(_on_shadow_zone_body_exited)
+	#shadow_zone.body_entered.connect(_on_shadow_zone_body_entered)
+	#shadow_zone.body_exited.connect(_on_shadow_zone_body_exited)
+	pass
 
 func _physics_process(delta: float) -> void:
 	super(delta)
